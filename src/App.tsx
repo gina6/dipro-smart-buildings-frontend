@@ -1,8 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useApiGet } from "./hook/useApiHook";
+import { Floors } from "./hook/dataInterfaces";
 
 function App() {
+
+  const floors = useApiGet<Floors>('http://localhost:3000/floors');
+  if (!floors.loading) console.log(floors);
+
   return (
     <div className="App">
       <header className="App-header">
