@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { useApiGet } from "./hook/useApiHook";
 import { Floors } from "./hook/dataInterfaces";
-import MobileButtomNav from './components/MobileBottomNav'
+import MobileButtomNav from './components/MobileBottomNav';
+import AppRouter from './components/AppRouter';
 
 function App() {
 
@@ -10,8 +11,9 @@ function App() {
   if (!floors.loading) console.log(floors);
 
   return (
-    <div>
 
+    <div>
+      <AppRouter />
       <MobileButtomNav />
     </div>
   );
