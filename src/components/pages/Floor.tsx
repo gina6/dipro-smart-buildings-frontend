@@ -5,6 +5,7 @@ export default function Floor() {
     return (
         <div>
             <BackLink linkText="< Stockwerk" route="/building"></BackLink>
+            <h1>Räume</h1>
         </div>
     )
 }
