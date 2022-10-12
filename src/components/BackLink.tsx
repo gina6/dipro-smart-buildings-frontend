@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface BackLinkProps {
     linkText: String;
-    url: string;
+    route: string;
 }
 
-export default function BackLink({ linkText, url }: BackLinkProps) {
+export default function BackLink({ linkText, route }: BackLinkProps) {
 
     return (
         <div>
-            <a href={url}>{linkText}</a>
+            <Link to={route}>{linkText}</Link>
         </div>
     )
 }

@@ -10,7 +10,7 @@ export default function PlantDetail() {
 
     return (
         <div>
-            <BackLink linkText="Raumübersicht" url={'http://localhost:3000/building'}></BackLink>
+            <BackLink linkText="Raumübersicht" route='/building'></BackLink>
 
         </div>
     )
