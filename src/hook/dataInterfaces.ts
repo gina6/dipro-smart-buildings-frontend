@@ -1,28 +1,29 @@
-export interface Floors {
+export interface FloorsInterface {
     floorId: string;
     floorLabel: string;
     floorNumber: string;
 }
 
-export interface Floor {
+export interface FloorInterface {
     floorLabel: string;
-    rooms: Array<Rooms>;
+    rooms: Array<RoomsInterface>;
 }
 
-export interface Rooms {
-    roomId: string;
+export interface RoomsInterface {
+    room: string;
     roomLabel: string;
     plantCount: number;
 }
 
-export interface Room {
+export interface RoomInterface {
     roomTemp: number;
     roomHumidity: number;
     roomCo2: number;
-    roomPlants: Array<Plant>;
+    roomPlants: Array<PlantInterface>;
 }
 
-export interface Plant {
+export interface PlantInterface {
+    plant: string;
     plantSpecies: string;
     potSize: string;
     substrat: string;
