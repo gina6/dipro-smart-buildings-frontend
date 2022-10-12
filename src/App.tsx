@@ -8,7 +8,7 @@ function App() {
 
   return (
 
-    <div>
+    <div className='mt-5'>
       <Router>
         <AppRouter />
         <MobileButtomNav />
