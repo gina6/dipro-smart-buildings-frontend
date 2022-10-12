@@ -5,7 +5,7 @@ import BackLink from "../BackLink";
 export default function PlantDetail() {
     return (
         <div>
-            <BackLink linkText="Raumübersicht" route='/building'></BackLink>
+            <BackLink linkText="Raumübersicht" route='/floors'></BackLink>
 
         </div>
     )

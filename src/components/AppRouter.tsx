@@ -10,10 +10,10 @@ export default function AppRouter() {
     return (
         <Routes>
             <Route path='/' element={<Notifications />}></Route>
-            <Route path='/building' element={<Buildings />}></Route>
+            <Route path='/floors' element={<Buildings />}></Route>
             <Route path='/plant' element={<PlantDetail />}></Route>
-            <Route path='/floor/:floorID' element={<Floor />}></Route>
-            <Route path='/room/:roomID' element={<Room />}></Route>
+            <Route path='/floors/:floorID' element={<Floor />}></Route>
+            <Route path='/rooms/:roomID' element={<Room />}></Route>
 
         </Routes>
     )

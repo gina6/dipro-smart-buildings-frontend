@@ -4,7 +4,7 @@ import BackLink from "../BackLink";
 export default function Room() {
     return (
         <div>
-            <BackLink linkText="< Räume" route="/floor"></BackLink>
+            <BackLink linkText="< Räume" route="/floors"></BackLink>
             <h1>Raumübersicht</h1>
         </div>
     )

@@ -14,7 +14,7 @@ export default function MobileBottomNav() {
                 <BiSearch className="scale-150" />
             </div>
             <div>
-                <Link to="/building"><BiBuildings className="scale-150" /></Link>
+                <Link to="/floors"><BiBuildings className="scale-150" /></Link>
 
             </div>
         </div >
