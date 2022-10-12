@@ -1,6 +1,7 @@
 export interface Floors {
     floorId: string;
     floorLabel: string;
+    floorNumber: string;
 }
 
 export interface Floor {
@@ -30,5 +31,6 @@ export interface Plant {
     plantDate: string;
     lastService: string;
     nextService: string;
+    plantImage: string;
 }
 
