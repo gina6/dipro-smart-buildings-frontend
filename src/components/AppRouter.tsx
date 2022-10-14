@@ -8,13 +8,16 @@ import Room from './pages/Room';
 
 export default function AppRouter() {
     return (
-        <Routes>
-            <Route path='/' element={<Notifications />}></Route>
-            <Route path='/floors' element={<Buildings />}></Route>
-            <Route path='/rooms/:roomID/:plantID' element={<PlantDetail />}></Route>
-            <Route path='/floors/:floorID' element={<Floor />}></Route>
-            <Route path='/rooms/:roomID' element={<Room />}></Route>
+        <div className='m-5'>
 
-        </Routes>
+            <Routes>
+                <Route path='/' element={<Notifications />}></Route>
+                <Route path='/floors' element={<Buildings />}></Route>
+                <Route path='/rooms/:roomID/:plantID' element={<PlantDetail />}></Route>
+                <Route path='/floors/:floorID' element={<Floor />}></Route>
+                <Route path='/rooms/:roomID' element={<Room />}></Route>
+
+            </Routes>
+        </div>
     )
 }
