@@ -3,20 +3,24 @@ import { BiBell, BiSearch, BiBuildings } from 'react-icons/bi';
 import { Link } from "react-router-dom";
 
 export default function MobileBottomNav() {
-    return (
-        <div className="flex flex-row w-full h-14 bottom-0 fixed justify-evenly items-center bg-gray-300">
+  return (
+    <div className="flex justify-center">
+      <div className="flex justify-center bottom-5 z-10 bg-gray-900 rounded-full fixed ">
+        <div className="p-6">
+          <BiSearch className="scale-150 text-white" />
+        </div>
+      </div>
 
-            <div>
-                <Link to="/"><BiBell className="scale-150" /></Link>
+      <div className="flex flex-row w-full h-14 bottom-0 fixed justify-around items-center bg-gray-300">
 
-            </div>
-            <div>
-                <BiSearch className="scale-150" />
-            </div>
-            <div>
-                <Link to="/floors"><BiBuildings className="scale-150" /></Link>
+        <div>
+            <Link to="/"><BiBell className="scale-150" /></Link>
 
-            </div>
-        </div >
+        </div>
+        <div>
+            <Link to="/floors"><BiBuildings className="scale-150" /></Link>
+        </div>
+      </div >
+    </div>
     )
 }
