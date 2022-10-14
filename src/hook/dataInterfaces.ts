@@ -9,24 +9,28 @@ export interface FloorInterface {
     rooms: Array<RoomsInterface>;
 }
 
-export interface RoomsInterface {
-    room: string;
+interface RoomsInterface {
+    roomId: string;
     roomLabel: string;
     plantCount: number;
 }
 
 export interface RoomInterface {
+    roomLabel: string;
+    floorLabel: string;
     roomTemp: number;
     roomHumidity: number;
     roomCo2: number;
-    roomPlants: Array<PlantInterface>;
+    plants: Array<PlantInterface>;
 }
 
 export interface PlantInterface {
-    plant: string;
+    plantId: string;
     plantSpecies: string;
+    floorLabel: string;
+    roomLabel: string;
     potSize: string;
-    substrat: string;
+    substrate: string;
     waterNeed: string;
     lightNeed: string;
     plantDate: string;
