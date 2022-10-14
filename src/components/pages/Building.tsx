@@ -12,7 +12,7 @@ export default function Buildings() {
         <div className="flex flex-col items-center h-screen">
             <h2 className="h-10 flex items-center">Suurstoffi 1</h2>
             <h1 className="h-10 flex items-center">Stockwerk</h1>
-            <div className="flex flex-col items-center justify-center h-full">
+            <div className="flex flex-col-reverse items-center justify-center h-full">
                 {floorsData?.map((floor: FloorsInterface, index: number) => (
                     <Link to={`/floors/${floor.floorId}`} key={index} className="h-14">{floor.floorNumber}</Link>
                 ))}
