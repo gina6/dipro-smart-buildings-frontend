@@ -12,8 +12,12 @@ export default function RoomBox({ linkTo, roomLabel, plantCount }: RoomBoxProp) 
 
     return (
         <div className="flex flex-col items-center bg-zinc-800 text-white p-5 m-1.5 rounded-full">
-            <Link to={linkTo}>{roomLabel}</Link>
-            {plantCount}
+            <p>
+                <Link to={linkTo}>{roomLabel}</Link>
+            </p>
+            <p>
+                {plantCount}
+            </p>
         </div>
     )
 

@@ -9,7 +9,7 @@ interface BackLinkProps {
 export default function BackLink({ linkText, route }: BackLinkProps) {
 
     return (
-        <div>
+        <div className="mt-6 mb-8">
             <Link to={route}>{linkText}</Link>
         </div>
     )

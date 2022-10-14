@@ -3,7 +3,6 @@ import BackLink from "../BackLink";
 import { useParams } from "react-router-dom";
 import { useApiGet } from "../../hook/useApiHook";
 import { FloorInterface } from "../../hook/dataInterfaces";
-import { Link } from "react-router-dom";
 import RoomBox from "../UI/RoomBox";
 
 
@@ -15,10 +14,10 @@ export default function Floor() {
     return (
         <div>
             <BackLink linkText="< Stockwerk" route="/floors"></BackLink>
-            <div className="flex flex-col h-screen">
+            <div className="flex flex-col">
                 <h2>{floorData?.floorLabel}</h2>
                 <h1>Räume</h1>
-                <div className="flex items-center justify-center h-full">
+                <div className="flex justify-center">
                     {floorData?.rooms.map((room, index: number) => (
                         <RoomBox key={index} linkTo={`/rooms/${room.roomId}`} roomLabel={`${room.roomLabel}`} plantCount={`${room.plantCount}`}></RoomBox>
                     ))}
