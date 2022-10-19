@@ -15,7 +15,7 @@ export default function PlantDetail() {
         <div>
             <BackLink linkText="< Raumübersicht" route='/floors'></BackLink>
             <div>{plantData?.floorLabel} | {plantData?.roomLabel}</div>
-            <h1>{plantData?.plantSpecies}</h1>
+            <h1 className="mb-3">{plantData?.plantSpecies}</h1>
             <img src={`${process.env.REACT_APP_BACKEND_API}${plantData?.plantImage}`} alt="Plant in the room" className="rounded-lg" />
             <RoomSensorData temp={3} co2={3} humidity={3}></RoomSensorData>
             <div className="p-5 my-5 bg-gray-100 rounded-lg">

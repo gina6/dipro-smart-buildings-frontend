@@ -8,7 +8,7 @@ import Room from './pages/Room';
 
 export default function AppRouter() {
     return (
-        <div className='m-7'>
+        <div className='m-10'>
 
             <Routes>
                 <Route path='/' element={<Notifications />}></Route>

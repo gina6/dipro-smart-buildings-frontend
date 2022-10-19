@@ -16,7 +16,7 @@ export default function Floor() {
             <BackLink linkText="< Stockwerk" route="/floors"></BackLink>
             <div className="flex flex-col">
                 <h2>{floorData?.floorLabel}</h2>
-                <h1>Räume</h1>
+                <h1 className="mb-5">Räume</h1>
                 <div className="flex flex-col">
                     {floorData?.rooms.map((room, index: number) => (
                         <RoomBox key={index} linkTo={`/rooms/${room.roomId}`} roomLabel={`${room.roomLabel}`} plantCount={`${room.plantCount}`}></RoomBox>
