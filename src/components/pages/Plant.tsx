@@ -1,7 +1,7 @@
 import React from "react";
 import BackLink from "../BackLink";
 import { useParams } from "react-router-dom";
-import { PlantInterface } from "../../hook/dataInterfaces";
+import { RoomInterface, PlantInterface } from "../../hook/dataInterfaces";
 import { useApiGet } from "../../hook/useApiHook";
 import RoomSensorData from "../UI/RoomSensorData";
 
@@ -9,7 +9,9 @@ import RoomSensorData from "../UI/RoomSensorData";
 export default function PlantDetail() {
 
     const { plantID } = useParams();
+    const { roomID } = useParams();
     const plantData = useApiGet<PlantInterface>(`/plants/${plantID}`).data;
+    const roomData = useApiGet<RoomInterface>(`/rooms/${roomID}`).data;
 
     return (
         <div>
@@ -17,7 +19,7 @@ export default function PlantDetail() {
             <div>{plantData?.floorLabel} | {plantData?.roomLabel}</div>
             <h1 className="mb-3">{plantData?.plantSpecies}</h1>
             <img src={`${process.env.REACT_APP_BACKEND_API}${plantData?.plantImage}`} alt="Plant in the room" className="rounded-lg" />
-            <RoomSensorData temp={3} co2={3} humidity={3}></RoomSensorData>
+            <RoomSensorData temp={roomData?.airTemp} co2={roomData?.airQuality} humidity={roomData?.airHumidity}></RoomSensorData>
             <div className="p-5 my-5 bg-gray-100 rounded-lg">
                 <div className="flex items-center pb-5 pt-2">
                     <h3>Pflanzenprofil</h3>

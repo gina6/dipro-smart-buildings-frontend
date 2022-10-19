@@ -18,9 +18,9 @@ interface RoomsInterface {
 export interface RoomInterface {
     roomLabel: string;
     floorLabel: string;
-    roomTemp: number;
-    roomHumidity: number;
-    roomCo2: number;
+    airTemp: number;
+    airHumidity: number;
+    airQuality: number;
     plants: Array<PlantInterface>;
 }
 
@@ -37,5 +37,6 @@ export interface PlantInterface {
     lastService: string;
     nextService: string;
     plantImage: string;
+    soilMoisture: number;
 }
 

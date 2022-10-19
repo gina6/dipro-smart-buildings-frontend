@@ -1,9 +1,9 @@
 import React from "react";
 
 interface SensorData {
-  temp: number;
-  co2: number;
-  humidity: number;
+  temp: number | undefined;
+  co2: number | undefined;
+  humidity: number | undefined;
 }
 
 
