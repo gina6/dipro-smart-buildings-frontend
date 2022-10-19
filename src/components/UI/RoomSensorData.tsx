@@ -1,26 +1,26 @@
 import React from "react";
 
 interface SensorData {
-  temperature: number;
+  temp: number;
   co2: number;
   humidity: number;
 }
 
 
-export default function RoomSensorData({ temperature, co2, humidity }: SensorData) {
+export default function RoomSensorData({ temp, co2, humidity }: SensorData) {
   return (
-    <div>
-      <div>
-        <h3>{temperature}°C</h3>
-        <p>Temp.</p>
+    <div className="flex flex-row justify-between my-5">
+      <div className="flex flex-col items-center">
+        <h3 className="text-lg">{temp}°C</h3>
+        <p className="font-light">Temp.</p>
       </div>
-      <div>
-        <h3>{co2}</h3>
-        <p>Co2</p>
+      <div className="flex flex-col items-center">
+        <h3 className="text-lg">{co2}</h3>
+        <p className="font-light">Co2</p>
       </div>
-      <div>
-        <h3>{humidity}%</h3>
-        <p>Humidity</p>
+      <div className="flex flex-col items-center">
+        <h3 className="text-lg">{humidity}%</h3>
+        <p className="font-light">Humidity</p>
       </div>
     </div>
   )
