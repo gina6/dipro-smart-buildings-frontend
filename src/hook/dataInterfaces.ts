@@ -40,3 +40,14 @@ export interface PlantInterface {
     soilMoisture: number;
 }
 
+export interface NotificationInterface {
+    sensorid: string;
+    plant: string;
+    plantId: string;
+    type: string;
+    date: string;
+    floor: string;
+    room: string;
+    roomId: string;
+    plantImage: string;
+}
