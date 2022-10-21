@@ -3,7 +3,11 @@ import { IoWaterOutline } from 'react-icons/io5';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useState } from "react";
 
-export default function WarningWater() {
+interface WarningProps {
+  date: string;
+}
+
+export default function WarningWater({ date }: WarningProps) {
 
   const [detailsOpen, setDetailsOpen] = useState(false);
 
@@ -11,14 +15,13 @@ export default function WarningWater() {
     setDetailsOpen(!detailsOpen);
   }
 
-
   return (
     <div className="flex flex-col p-3 my-5 bg-sky-200 rounded-lg">
       <div className="flex items-center justify-evenly">
         <IoWaterOutline className="scale-150" />
         <div>
           <h3>Wasserbestand kritisch</h3>
-          <p>vor 3 Tagen</p>
+          <p>{date}</p>
         </div>
         <div onClick={toggleDetail}>
           {detailsOpen ? <FiChevronUp className="scale-150 ml-3" /> : <FiChevronDown className="scale-150 ml-3" />}
