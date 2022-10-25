@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export interface TApiResponse<T> {
     status: Number;
@@ -15,23 +15,25 @@ export const useApiGet = <T>(route: string): TApiResponse<T> => {
     const [error, setError] = useState<any>();
     const [loading, setLoading] = useState<Boolean>(false);
 
-    const getApiData = async () => {
-        setLoading(true);
-        try {
-            const apiResponse = await fetch(process.env.REACT_APP_BACKEND_API + route);
-            const json = await apiResponse.json();
-            setStatus(apiResponse.status);
-            setStatusText(apiResponse.statusText);
-            setData(json);
-        } catch (error) {
-            setError(error);
-        }
-        setLoading(false);
-    };
+    const getApiData = useCallback(
+        async () => {
+            setLoading(true);
+            try {
+                const apiResponse = await fetch(process.env.REACT_APP_BACKEND_API + route);
+                const json = await apiResponse.json();
+                setStatus(apiResponse.status);
+                setStatusText(apiResponse.statusText);
+                setData(json);
+            } catch (error) {
+                setError(error);
+            }
+            setLoading(false);
+        }, [route,]
+    );
 
     useEffect(() => {
         getApiData();
-    }, []);
+    }, [getApiData]);
 
     return { status, statusText, data, error, loading };
 };
