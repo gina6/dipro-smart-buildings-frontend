@@ -8,7 +8,7 @@ export interface TApiResponse<T> {
     loading: Boolean;
 };
 
-export const useApiGet = <T>(route: string): TApiResponse<T> => {
+export const useApiGet = <T>(route: string | null): TApiResponse<T> => {
     const [status, setStatus] = useState<Number>(0);
     const [statusText, setStatusText] = useState<String>('');
     const [data, setData] = useState<T>();
@@ -19,16 +19,18 @@ export const useApiGet = <T>(route: string): TApiResponse<T> => {
         async () => {
             setLoading(true);
             try {
-                const apiResponse = await fetch(process.env.REACT_APP_BACKEND_API + route);
-                const json = await apiResponse.json();
-                setStatus(apiResponse.status);
-                setStatusText(apiResponse.statusText);
-                setData(json);
+                if (route) {
+                    const apiResponse = await fetch(process.env.REACT_APP_BACKEND_API + route);
+                    const json = await apiResponse.json();
+                    setStatus(apiResponse.status);
+                    setStatusText(apiResponse.statusText);
+                    setData(json);
+                }
             } catch (error) {
                 setError(error);
             }
             setLoading(false);
-        }, [route,]
+        }, [route]
     );
 
     useEffect(() => {

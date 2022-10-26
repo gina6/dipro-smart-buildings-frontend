@@ -15,7 +15,9 @@ export default function MobileBottomNav() {
 
   return (
     <div className="bottom-0 fixed w-screen">
-      <PlantSearch isOpen={searchOpen} closeSearch={toggleSearch}></PlantSearch>
+      {searchOpen && (
+        <PlantSearch closeSearch={toggleSearch}></PlantSearch>
+      )}
       <div className="flex justify-center">
         <div className="flex justify-center bottom-5 z-10 bg-gray-900 rounded-full fixed ">
           <div className="p-6">

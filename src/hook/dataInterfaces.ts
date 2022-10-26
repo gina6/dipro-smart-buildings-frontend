@@ -28,6 +28,7 @@ export interface PlantInterface {
     plantId: string;
     plantSpecies: string;
     floorLabel: string;
+    roomId: string;
     roomLabel: string;
     potSize: string;
     substrate: string;
