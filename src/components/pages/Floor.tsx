@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import { useApiGet } from "../../hook/useApiHook";
 import { FloorInterface, FloorsInterface } from "../../hook/dataInterfaces";
 import RoomBox from "../UI/RoomBox";
@@ -32,12 +31,9 @@ export default function Floor() {
           <h1>Gebäude</h1>
 
           <div className="inline-flex bg-white border rounded-md">
-            <a
-              href="#"
-              className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md"
-            >
+            <button className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md">
               {getLabel(floorId)}
-            </a>
+            </button>
 
             <div className="relative">
               <button
