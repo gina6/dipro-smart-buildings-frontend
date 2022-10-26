@@ -10,9 +10,6 @@ export default function Floor() {
   const floorData = useApiGet<FloorInterface>(`/floors/${floorId}`).data;
   const [showDropdown, setShowDropdown] = useState(false);
 
-  console.log(floorsData);
-  console.log(floorData);
-
   const onChange = (id: string): void => {
     setFloorId(id);
   };
