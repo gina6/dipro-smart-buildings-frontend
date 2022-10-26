@@ -30,7 +30,7 @@ export default function MobileBottomNav() {
             <Link id="notificationTab" className="h-full w-1/2 flex justify-center items-center" to="/" onClick={() => setNavIndicator(true)}>
               <BiBell className="scale-150" />
             </Link>
-            <Link id="buildingTab" className="h-full w-1/2 flex justify-center items-center" to="/floors" onClick={() => setNavIndicator(false)}>
+            <Link id="buildingTab" className="h-full w-1/2 flex justify-center items-center" to="/floors/" onClick={() => setNavIndicator(false)}>
               <BiBuildings className="scale-150" />
             </Link>
           </div >
