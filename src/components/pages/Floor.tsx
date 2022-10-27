@@ -87,6 +87,7 @@ export default function Floor() {
               linkTo={`/rooms/${room.roomId}`}
               roomLabel={`${room.roomLabel}`}
               plantCount={`${room.plantCount}`}
+              plantImgs={`${room.plantImages}`}
             ></RoomBox>
           ))}
         </div>

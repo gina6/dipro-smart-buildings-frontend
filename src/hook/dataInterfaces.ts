@@ -13,6 +13,7 @@ interface RoomsInterface {
     roomId: string;
     roomLabel: string;
     plantCount: number;
+    plantImages: Array<string>;
 }
 
 export interface RoomInterface {
