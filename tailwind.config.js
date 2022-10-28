@@ -5,11 +5,11 @@ module.exports = {
     extend: {},
     colors: {
       green: '#37523B',
-      plantGreen: '#6D9C4E',
+      plantGreen: '#D9E2D2',
       white: '#ffffff',
-      water: '#EC4634',
-      darkGrey: '#AFAFAF',
-      lightGrey: '#E5E5E5'
+      water: '#2B6589',
+      lightGrey: '#F4F4F3',
+      darkGrey: '#AFAFAF'
     }
   },
   plugins: [],
