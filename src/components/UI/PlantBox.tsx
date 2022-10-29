@@ -18,7 +18,9 @@ export default function PlantBox({
       to={linkTo}
       className="relative flex items-center justify-center w-full aspect-square rounded-3xl overflow-hidden"
     >
-      <p className="text-white text-lg text-center drop-shadow-md p-5 -z-10">{plantLabel}</p>
+      <p className="text-white text-lg font-medium text-center drop-shadow-md p-5 -z-10">
+        {plantLabel}
+      </p>
 
       <img
         src="https://tse2.mm.bing.net/th?id=OIP.MmduMLwTdA5lXhQZYwlnMAHaL6&pid=Api"
