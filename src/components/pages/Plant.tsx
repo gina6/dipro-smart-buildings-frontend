@@ -22,7 +22,6 @@ export default function PlantDetail() {
             <div>{plantData?.floorLabel} | {plantData?.roomLabel}</div>
             <h1 className="mb-3">{plantData?.plantSpecies}</h1>
             <img src={`${process.env.REACT_APP_BACKEND_API}${plantData?.plantImage}`} alt="Plant in the room" className="rounded-lg" />
-
             <RoomSensorData temp={roomData?.airTemp} co2={roomData?.airQuality} humidity={roomData?.airHumidity}></RoomSensorData>
 
             {plantWarning && (
