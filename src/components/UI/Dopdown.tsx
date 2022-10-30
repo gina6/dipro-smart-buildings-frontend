@@ -28,12 +28,12 @@ export default function Dropdown({ changeFloorId }: DrowpdownProps) {
   };
 
   return (
-    <div className="flex">
+    <div className="flex justify-center w-screen">
       <button className="px-4 py-2 font-bold text-green text-xl hover:text-gray-700 hover:bg-gray-50 rounded-l-md">
         {getLabel(floorId)}
       </button>
 
-      <div className="relative">
+      <div className="">
         <button
           type="button"
           onClick={() => {
@@ -45,12 +45,12 @@ export default function Dropdown({ changeFloorId }: DrowpdownProps) {
         </button>
 
         {showDropdown && (
-          <div className="absolute right-0 z-10 w-56 origin-top-right bg-green rounded-b-lg">
-            <div className="p-2">
+          <div className="flex justify-center absolute right-0 left-0 z-10 bg-green rounded-b-2xl">
+            <div className="flex flex-col-reverse p-8">
               {floorsData?.map((floor) => (
                 <button
                   key={floor.floorId}
-                  className="block px-4 py-2 text-sm text-white hover:bg-gray-50 hover:text-gray-700"
+                  className="flex justify-center px-4 py-4 font-bold text-xl text-plantGreen active:text-white hover:bg-gray-50 hover:text-gray-700"
                   onClick={() => {
                     onChange(floor.floorId);
                     setShowDropdown(false);
