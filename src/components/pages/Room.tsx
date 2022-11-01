@@ -1,5 +1,5 @@
 import React from "react";
-import BackLink from "../BackLink";
+import BackLink from "../UI/BackLink";
 import { useParams } from "react-router-dom";
 import { useApiGet } from "../../hook/useApiHook";
 import { RoomInterface, PlantInterface } from "../../hook/dataInterfaces";

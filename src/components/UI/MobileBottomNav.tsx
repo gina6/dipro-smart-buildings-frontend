@@ -1,7 +1,7 @@
 import React from "react";
 import { BiBell, BiSearch, BiBuildings } from 'react-icons/bi';
 import { Link } from "react-router-dom";
-import PlantSearch from "./UI/PlantSearch";
+import PlantSearch from "./PlantSearch";
 import { useState } from "react";
 
 export default function MobileBottomNav() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import MobileButtomNav from './components/MobileBottomNav';
+import MobileButtomNav from './components/UI/MobileBottomNav';
 import AppRouter from './components/AppRouter';
 import { BrowserRouter as Router } from 'react-router-dom';
 
