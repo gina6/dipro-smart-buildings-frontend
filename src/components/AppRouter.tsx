@@ -10,9 +10,9 @@ export default function AppRouter() {
     <div className="m-7">
       <Routes>
         <Route path="/" element={<Notifications />}></Route>
-        <Route path="/rooms/:roomID/:plantID" element={<PlantDetail />}></Route>
         <Route path="/floors/" element={<Floor />}></Route>
         <Route path="/rooms/:roomID" element={<Room />}></Route>
+        <Route path="/rooms/:roomID/:plantID" element={<PlantDetail />}></Route>
       </Routes>
     </div>
   );
