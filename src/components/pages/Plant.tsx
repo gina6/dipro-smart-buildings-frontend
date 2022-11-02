@@ -1,5 +1,5 @@
 import React from "react";
-import BackLink from "../BackLink";
+import BackLink from "../UI/BackLink";
 import { useParams } from "react-router-dom";
 import {
   RoomInterface,
@@ -60,7 +60,7 @@ export default function PlantDetail() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <BackLink linkText="< Raumübersicht" route="/floors"></BackLink>
+      <BackLink></BackLink>
       <div>
         {plantData?.floorLabel} | {plantData?.roomLabel}
       </div>

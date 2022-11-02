@@ -1,5 +1,5 @@
 import React from "react";
-import BackLink from "../BackLink";
+import BackLink from "../UI/BackLink";
 import { useParams } from "react-router-dom";
 import { useApiGet } from "../../hook/useApiHook";
 import { RoomInterface, PlantInterface } from "../../hook/dataInterfaces";
@@ -12,7 +12,7 @@ export default function Room() {
 
   return (
     <div>
-      <BackLink linkText="< Räume" route="/floors"></BackLink>
+      <BackLink></BackLink>
       <div className="flex flex-col mb-28">
         <h2>{roomData?.floorLabel}</h2>
         <h1>{roomData?.roomLabel}</h1>
