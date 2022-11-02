@@ -1,5 +1,5 @@
 import React from 'react';
-import MobileButtomNav from './components/MobileBottomNav';
+import MobileBottomNav from './components/MobileBottomNav';
 import AppRouter from './components/AppRouter';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function App() {
     <div>
       <Router>
         <AppRouter />
-        <MobileButtomNav />
+        <MobileBottomNav />
       </Router>
 
 

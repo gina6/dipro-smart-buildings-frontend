@@ -93,42 +93,42 @@ export default function PlantDetail() {
         <div className="flex flex-col">
           <TableRow>
             <p>Ideale Temperatur</p>
-            <p className="flex text-plantGreen">
+            <p className="flex text-mediumGreen">
               <span className="mr-4">{plantData?.idealTemp}</span>
               <Temperatur />
             </p>
           </TableRow>
           <TableRow>
             <p>Lichtverhältnis</p>
-            <p className="flex text-plantGreen">
+            <p className="flex text-mediumGreen">
               <span className="mr-4">{plantData?.lightNeed}</span>
               {getLightIcon(plantData?.lightNeed)}
             </p>
           </TableRow>
           <TableRow>
             <p>Substrat</p>
-            <p className="flex text-plantGreen">
+            <p className="flex text-mediumGreen">
               <span className="mr-4">{plantData?.substrate}</span>
               <Substrat />
             </p>
           </TableRow>
           <TableRow>
             <p>Topfgrösse</p>
-            <p className="flex text-plantGreen">
+            <p className="flex text-mediumGreen">
               <span className="mr-4">{plantData?.potSize}</span>
               <Topfdurchmesser />
             </p>
           </TableRow>
           <TableRow>
             <p>Wasserbedarf</p>
-            <p className="flex text-plantGreen">
+            <p className="flex text-mediumGreen">
               <span className="mr-4">{waterNeed}</span>
               <Wassertropf />
             </p>
           </TableRow>
           <TableRow>
             <p>Kaufdatum</p>
-            <p className="flex text-plantGreen">
+            <p className="flex text-mediumGreen">
               <span className="mr-4">{formatDate(plantData?.plantDate)}</span>
               <Kalender />
             </p>
@@ -140,14 +140,14 @@ export default function PlantDetail() {
         <div className="flex flex-col items-center">
           <h2 className="py-5">Pflege</h2>
           <p>Letzter Pflegetermin</p>
-          <p className="text-plantGreen">
+          <p className="text-mediumGreen">
             {formatDate(plantData?.lastService)}
           </p>
           <div className="h-px w-1/3 my-1 rounded-full bg-lightGrey"></div>
           <p>
             <b>Nächster Pflegetermin</b>
           </p>
-          <p className="text-plantGreen">
+          <p className="text-mediumGreen">
             {formatDate(plantData?.nextService)}
           </p>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Wassertropf } from "../../icons/Wassertropf.svg";
+import { ReactComponent as Wassertropf } from "../../icons/Wassertropf white.svg";
 
 interface WarningProps {
   date: string;
@@ -27,7 +27,7 @@ export default function WarningWater({ date }: WarningProps) {
     <div className="my-5 bg-water text-white rounded-xl">
       <div className="flex items-center">
         <div className="p-4">
-          <Wassertropf className="scale-150 [&_path]:fill-white" />
+          <Wassertropf className="scale-150" />
         </div>
         <div className="p-3 pl-0">
           <h3>Bodenfeuchtigkeit zu gering</h3>
