@@ -9,12 +9,12 @@ export default function Room() {
   const { roomID } = useParams();
   const roomData = useApiGet<RoomInterface>(`/rooms/${roomID}`).data;
   const plantCount = roomData?.plants.length;
-  
+
   return (
     <div>
       <BackLink linkText="< Räume" route="/floors"></BackLink>
       <div className="flex flex-col mb-28">
-      <h2>{roomData?.floorLabel}</h2>
+        <h2>{roomData?.floorLabel}</h2>
         <h1>{roomData?.roomLabel}</h1>
         <p className="text-right p-5 uppercase"> {plantCount} Pflanzen</p>
         <div className="grid grid-flow-row grid-cols-2 gap-4 md:grid-cols-3">
