@@ -1,17 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Chevron } from "../../icons/Back_Button.svg";
+import { ReactComponent as BackBG } from "../../assets/BG-Primary-Green.svg";
 
 export default function BackLink() {
   const navigate = useNavigate();
 
   return (
     <div
-      className="flex fixed left-0 top-0 items-center mb-5 w-2/5 h-16 text-white bg-back-button bg-no-repeat"
+      className="fixed flex left-0 top-0 cursor-pointer h-[50px] text-white"
       onClick={() => navigate(-1)}
     >
-      <Chevron className="ml-3 mr-2 "></Chevron>
-      <p>Zurück</p>
+      <div className="flex items-center pl-5">
+        <Chevron className="mr-2"></Chevron>
+        <p>Zurück</p>
+      </div>
+      <BackBG className="absolute top-0 -z-10 h-16" />
     </div>
   );
 }
