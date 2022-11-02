@@ -35,6 +35,7 @@ export interface PlantInterface {
     substrate: string;
     waterNeed: string;
     lightNeed: string;
+    idealTemp: string;
     plantDate: string;
     lastService: string;
     nextService: string;
