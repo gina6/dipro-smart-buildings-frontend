@@ -12,7 +12,6 @@ export default function PlantBox({
   plantLabel,
   plantImg,
 }: plantBoxProps) {
-  console.log(plantImg);
   return (
     <Link
       to={linkTo}
@@ -23,11 +22,10 @@ export default function PlantBox({
       </p>
 
       <img
-        src="https://tse2.mm.bing.net/th?id=OIP.MmduMLwTdA5lXhQZYwlnMAHaL6&pid=Api"
+        src={`${process.env.REACT_APP_BACKEND_API}${plantImg}`}
         alt="Plant in the room"
-        className="absolute w-full h-full object-cover brightness-50 bg-darkGrey -z-20"
+        className="absolute w-full h-full object-cover brightness-[.75] bg-darkGrey -z-20"
       />
-      {/* <img src={`${process.env.REACT_APP_BACKEND_API}${plantImg}`} alt="Plant in the room" className="rounded-lg" /> */}
     </Link>
   );
 }
