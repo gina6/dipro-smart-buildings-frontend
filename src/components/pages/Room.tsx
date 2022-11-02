@@ -14,7 +14,7 @@ export default function Room() {
 
   return (
     <>
-      <Header />
+      <Header headerTitle={roomData?.roomLabel} headerSubtitle={roomData?.floorLabel}/>
       <BackLink />
       <Container>
         <div className="flex flex-col mb-28">
