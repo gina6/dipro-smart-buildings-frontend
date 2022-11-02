@@ -7,7 +7,7 @@ export default function BackLink() {
 
   return (
     <div
-      className="flex items-center mb-5 h-16 text-white bg-back-button bg-no-repeat"
+      className="flex fixed left-0 top-0 items-center mb-5 w-2/5 h-16 text-white bg-back-button bg-no-repeat"
       onClick={() => navigate(-1)}
     >
       <Chevron className="mx-3"></Chevron>
