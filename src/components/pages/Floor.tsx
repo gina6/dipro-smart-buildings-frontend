@@ -31,9 +31,13 @@ export default function Floor() {
         headerSubtitle={"Pflanzenlexikon"}
       />
         <Container>
+        <div className="hidden lg:block px-5 text-green">
+        <Dropdown changeFloorId={changeFloorId}></Dropdown>
+        </div>
           <div className="flex flex-col mb-28">
-            <p className="text-right p-5 uppercase">{plantCount} Pflanzen</p>
-
+          <p className="text-right lg:text-left p-5 uppercase text-green">
+            {plantCount} Pflanzen
+          </p>
             <div className="grid grid-flow-row grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
               {floorData?.rooms
                 .filter((room) => room.plantCount !== 0)

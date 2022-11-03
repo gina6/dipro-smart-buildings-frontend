@@ -5,6 +5,7 @@ interface BottomNavButtonProps {
   linkTo: string;
   childIcon: JSX.Element;
   active: boolean;
+  buttonText?: string;
   setActiveTab: () => void;
 }
 
@@ -12,12 +13,15 @@ export default function MobileBottomNavButton({
   linkTo,
   childIcon,
   active,
+  buttonText,
   setActiveTab,
 }: BottomNavButtonProps) {
   return (
+    <>
+    {/* Mobile and Tablet NavBar Button */}
     <div
-      className={`h-full w-1/2 ${
-        active ? "border-b-2 border-green" : "stroke-plantGreen"
+      className={`h-full border-b-4 w-1/2 border-white lg:hidden ${
+        active ? " !border-green" : "stroke-plantGreen"
       }`}
       onClick={setActiveTab}
     >
@@ -28,5 +32,25 @@ export default function MobileBottomNavButton({
         {childIcon}
       </Link>
     </div>
+
+    {/* Desktop NavBar Button */}
+    <div
+      className={`hidden lg:block p-5 ${
+        active ? "fill-green" : "stroke-plantGreen"
+      }`}
+      onClick={setActiveTab}
+    >
+      <Link
+        className="flex justify-center items-center h-full w-full"
+        to={linkTo}
+      >
+        {childIcon}
+        {buttonText && <h3 className={`text-xl pl-2 ${
+        active ? "text-green" : "text-darkGrey"
+      }`}>{buttonText}</h3>}
+        
+      </Link>
+    </div>
+        </>
   );
 }

@@ -28,7 +28,7 @@ export default function Dropdown({ changeFloorId }: DrowpdownProps) {
   };
 
   return (
-    <div className="flex justify-center w-screen">
+    <div className="flex justify-center w-full">
       <button className=" py-2 pl-2 font-bold text-green text-xl hover:text-gray-700 hover:bg-gray-50 rounded-l-md">
         {getLabel(floorId)}
       </button>
