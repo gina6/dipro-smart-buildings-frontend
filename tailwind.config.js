@@ -1,10 +1,12 @@
+const { url } = require('inspector');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        "back-button": "url('./assets/BG-Primary-Green.svg')",
+      boxShadow: {
+        top: '2px -1px 8px 2px rgba(0, 0, 0, 0.1)',
       },
     },
     colors: {

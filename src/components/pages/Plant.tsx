@@ -7,6 +7,8 @@ import {
   NotificationInterface,
 } from "../../hook/dataInterfaces";
 import { useApiGet } from "../../hook/useApiHook";
+import Container from "../UI/Container";
+import Header from "../UI/Header";
 import RoomSensorData from "../UI/RoomSensorData";
 import WarningWater from "../UI/WarningWater";
 import ContentBox from "../UI/ContentBox";
@@ -59,99 +61,102 @@ export default function PlantDetail() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <BackLink></BackLink>
-      <div>
-        {plantData?.floorLabel} | {plantData?.roomLabel}
-      </div>
-      <h1 className="mb-3">{plantData?.plantSpecies}</h1>
-      <ContentBox>
-        {plantData && (
-          <img
-            src={`${process.env.REACT_APP_BACKEND_API}${plantData.plantImage}`}
-            alt="Plant in the room"
-            className="rounded-2xl"
-          />
-        )}
-        <RoomSensorData
-          temp={roomData?.airTemp}
-          soilMoisture={plantData?.soilMoisture}
-          soilMoistureWarning={Boolean(plantWarning)}
-          humidity={roomData?.airHumidity}
-        />
-      </ContentBox>
+    <>
+      <Header headerTitle={plantData?.plantSpecies} headerSubtitle={`${plantData?.floorLabel} | ${plantData?.roomLabel}`}/>
+      <BackLink />
+      <Container>
+        <div className="mx-auto max-w-3xl">
+          <ContentBox>
+            {plantData && (
+              <img
+                src={`${process.env.REACT_APP_BACKEND_API}${plantData.plantImage}`}
+                alt="Plant in the room"
+                className="rounded-2xl"
+              />
+            )}
+            <RoomSensorData
+              temp={roomData?.airTemp}
+              soilMoisture={plantData?.soilMoisture}
+              soilMoistureWarning={Boolean(plantWarning)}
+              humidity={roomData?.airHumidity}
+            />
+          </ContentBox>
 
-      {plantWarning && (
-        <WarningWater date={`${plantWarning?.date}`}></WarningWater>
-      )}
+          {plantWarning && (
+            <WarningWater date={`${plantWarning?.date}`}></WarningWater>
+          )}
 
-      <ContentBox>
-        <div className="flex items-center justify-center py-5">
-          <h2>ID: {plantID}</h2>
-          <p className="text-xs pl-2">Pflanzenprofil</p>
-        </div>
-        <div className="flex flex-col">
-          <TableRow>
-            <p>Ideale Temperatur</p>
-            <p className="flex text-mediumGreen">
-              <span className="mr-4">{plantData?.idealTemp}</span>
-              <Temperatur />
-            </p>
-          </TableRow>
-          <TableRow>
-            <p>Lichtverhältnis</p>
-            <p className="flex text-mediumGreen">
-              <span className="mr-4">{plantData?.lightNeed}</span>
-              {getLightIcon(plantData?.lightNeed)}
-            </p>
-          </TableRow>
-          <TableRow>
-            <p>Substrat</p>
-            <p className="flex text-mediumGreen">
-              <span className="mr-4">{plantData?.substrate}</span>
-              <Substrat />
-            </p>
-          </TableRow>
-          <TableRow>
-            <p>Topfgrösse</p>
-            <p className="flex text-mediumGreen">
-              <span className="mr-4">{plantData?.potSize}</span>
-              <Topfdurchmesser />
-            </p>
-          </TableRow>
-          <TableRow>
-            <p>Wasserbedarf</p>
-            <p className="flex text-mediumGreen">
-              <span className="mr-4">{waterNeed}</span>
-              <Wassertropf />
-            </p>
-          </TableRow>
-          <TableRow>
-            <p>Kaufdatum</p>
-            <p className="flex text-mediumGreen">
-              <span className="mr-4">{formatDate(plantData?.plantDate)}</span>
-              <Kalender />
-            </p>
-          </TableRow>
-        </div>
-      </ContentBox>
+          <ContentBox>
+            <div className="flex items-center justify-center py-5">
+              <h2>ID: {plantID}</h2>
+              <p className="text-xs pl-2">Pflanzenprofil</p>
+            </div>
+            <div className="flex flex-col">
+              <TableRow>
+                <p>Ideale Temperatur</p>
+                <p className="flex text-mediumGreen">
+                  <span className="mr-4">{plantData?.idealTemp}</span>
+                  <Temperatur />
+                </p>
+              </TableRow>
+              <TableRow>
+                <p>Lichtverhältnis</p>
+                <p className="flex text-mediumGreen">
+                  <span className="mr-4">{plantData?.lightNeed}</span>
+                  {getLightIcon(plantData?.lightNeed)}
+                </p>
+              </TableRow>
+              <TableRow>
+                <p>Substrat</p>
+                <p className="flex text-mediumGreen">
+                  <span className="mr-4">{plantData?.substrate}</span>
+                  <Substrat />
+                </p>
+              </TableRow>
+              <TableRow>
+                <p>Topfgrösse</p>
+                <p className="flex text-mediumGreen">
+                  <span className="mr-4">{plantData?.potSize}</span>
+                  <Topfdurchmesser />
+                </p>
+              </TableRow>
+              <TableRow>
+                <p>Wasserbedarf</p>
+                <p className="flex text-mediumGreen">
+                  <span className="mr-4">{waterNeed}</span>
+                  <Wassertropf />
+                </p>
+              </TableRow>
+              <TableRow>
+                <p>Kaufdatum</p>
+                <p className="flex text-mediumGreen">
+                  <span className="mr-4">
+                    {formatDate(plantData?.plantDate)}
+                  </span>
+                  <Kalender />
+                </p>
+              </TableRow>
+            </div>
+          </ContentBox>
 
-      <ContentBox>
-        <div className="flex flex-col items-center">
-          <h2 className="py-5">Pflege</h2>
-          <p>Letzter Pflegetermin</p>
-          <p className="text-mediumGreen">
-            {formatDate(plantData?.lastService)}
-          </p>
-          <div className="h-px w-1/3 my-1 rounded-full bg-lightGrey"></div>
-          <p>
-            <b>Nächster Pflegetermin</b>
-          </p>
-          <p className="text-mediumGreen">
-            {formatDate(plantData?.nextService)}
-          </p>
+          <ContentBox>
+            <div className="flex flex-col items-center">
+              <h2 className="py-5">Pflege</h2>
+              <p>Letzter Pflegetermin</p>
+              <p className="text-mediumGreen">
+                {formatDate(plantData?.lastService)}
+              </p>
+              <div className="h-px w-1/3 my-1 rounded-full bg-lightGrey"></div>
+              <p>
+                <b>Nächster Pflegetermin</b>
+              </p>
+              <p className="text-mediumGreen">
+                {formatDate(plantData?.nextService)}
+              </p>
+            </div>
+          </ContentBox>
         </div>
-      </ContentBox>
-    </div>
+      </Container>
+    </>
   );
 }

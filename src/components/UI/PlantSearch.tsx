@@ -1,58 +1,91 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ReactComponent as CloseIcon } from "../../icons/Close-Icon.svg";
 import { generatePath, useNavigate } from "react-router-dom";
 import { useApiGet } from "../../hook/useApiHook";
 import { PlantInterface } from "../../hook/dataInterfaces";
+import { ReactComponent as Close } from "../../icons/Close.svg";
+import PrimaryButton from "./PrimaryButton";
 
 interface OverlayProps {
   closeSearch: () => void;
 }
 
+function stopPropagation(e: React.SyntheticEvent) {
+  e.stopPropagation();
+}
+
 export default function PlantSearch({ closeSearch }: OverlayProps) {
-  const [error, setError] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [enabled, setEnabled] = useState(false);
   const [route, setRoute] = useState<string | null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
-  const plantData = useApiGet<PlantInterface>(route);
-  let navigate = useNavigate();
+  const { data, error } = useApiGet<PlantInterface>(route);
+  const navigate = useNavigate();
 
   function searchPlantPage() {
     setRoute(`/plants/plant${searchInput.current?.value}`);
   }
 
   useEffect(() => {
-    if (plantData.data) {
-      setError(false);
+    if (data) {
+      setHasError(false);
       navigate(
         generatePath("/rooms/:roomID/:plantID", {
-          roomID: plantData?.data.roomId,
-          plantID: plantData?.data.plantId,
+          roomID: data.roomId,
+          plantID: data.plantId,
         })
       );
       closeSearch();
-    } else if (plantData.error) {
-      setError(true);
+    } else if (error) {
+      setHasError(true);
     }
-  }, [plantData, navigate, closeSearch]);
+  }, [data, error, navigate, closeSearch]);
+
+  useEffect(() => {
+    searchInput.current?.focus();
+  }, []);
+
+  function onType(e: React.KeyboardEvent) {
+    const isEmpty = !searchInput.current?.value;
+    setEnabled(!isEmpty);
+    setHasError(false);
+    setRoute(null);
+    if (e.key === "Enter" && !isEmpty) {
+      searchPlantPage();
+    }
+  }
 
   return (
-    <div>
-      <div className="flex flex-col items-center p-5 pb-10 bg-gray-100 rounded-t-lg mx-5">
-        <div onClick={closeSearch} className="self-end scale-150">
-          <CloseIcon />
+    <div
+      className="fixed top-0 bottom-0 left-0 right-0 bg-[black]/40"
+      onClick={closeSearch}
+    >
+      <div
+        className="absolute bottom-0 w-full p-5 pb-28 bg-white rounded-t-2xl flex flex-col items-center shadow-top"
+        onClick={stopPropagation}
+      >
+        <div onClick={closeSearch} className="self-end">
+          <Close />
         </div>
-        <h3 className="pb-5">ID eingeben</h3>
+        <h2 className="mt-4">Pflanzen-ID eingeben</h2>
         <input
           ref={searchInput}
+          onKeyUp={onType}
           type="text"
           name="searchInput"
           autoComplete="off"
-          className="p-2 bg-transparent border-2 border-transparent border-b-gray-600 rounded-sm outline-none text-center"
-          placeholder="plant000_00"
+          className="p-2 mt-8 border-b-2 border-b-darkGrey rounded-sm outline-none text-center"
+          placeholder="000_00"
         />
-        {error && <p className="text-red-700">Pflanze nicht gefunden!</p>}
-        <button onClick={searchPlantPage} className="mt-3">
+        <p className="text-red mt-2 h-[1em]">
+          {hasError && <b>Pflanze nicht gefunden!</b>}
+        </p>
+        <PrimaryButton
+          onClick={searchPlantPage}
+          disabled={!enabled}
+          className="mt-6"
+        >
           Suchen
-        </button>
+        </PrimaryButton>
       </div>
     </div>
   );
