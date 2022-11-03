@@ -4,16 +4,13 @@ import Floor from "./pages/Floor";
 import Notifications from "./pages/Notifications";
 import PlantDetail from "./pages/Plant";
 import Room from "./pages/Room";
-
 export default function AppRouter() {
   return (
-    <div className="m-7">
       <Routes>
         <Route path="/" element={<Notifications />}></Route>
         <Route path="/floors/" element={<Floor />}></Route>
         <Route path="/rooms/:roomID" element={<Room />}></Route>
         <Route path="/rooms/:roomID/:plantID" element={<PlantDetail />}></Route>
       </Routes>
-    </div>
   );
 }
