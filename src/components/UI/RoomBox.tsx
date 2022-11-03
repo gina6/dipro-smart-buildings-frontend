@@ -17,20 +17,20 @@ export default function RoomBox({
   return (
     <Link
       to={linkTo}
-      className="flex flex-col items-center justify-center p-2 w-1/2 rounded-3xl bg-white"
+      className="bg-white rounded-3xl overflow-hidden "
     >
-      <div className="flex flex-wrap ">
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 m-3 md:m-5">
         {plantImgs.map((plantImg: string, index: number) => (
           <img
             key={index}
             alt="Pflanze"
             src={`${process.env.REACT_APP_BACKEND_API}${plantImg}`}
-            className="aspect-square rounded-lg w-2/5 m-1 drop-shadow-md"
+            className="h-full aspect-square drop-shadow-lg object-cover rounded-lg"
           />
         ))}
       </div>
-      <div className="m-2">
-        <p className="font-bold text-green">{roomLabel}</p>
+      <div className="text-center text-green m-2">
+        <p className="font-bold text-xl">{roomLabel}</p>
         <p className="font-light">{plantCount} Pflanzen</p>
       </div>
     </Link>
