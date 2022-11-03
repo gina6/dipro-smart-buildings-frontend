@@ -14,10 +14,13 @@ export default function Room() {
 
   return (
     <>
-      <Header headerTitle={roomData?.roomLabel} headerSubtitle={roomData?.floorLabel}/>
+      <Header
+        headerTitle={roomData?.roomLabel}
+        headerSubtitle={roomData?.floorLabel}
+      />
       <BackLink />
       <Container>
-        <div className="flex flex-col mb-28">
+        <div className="flex flex-col">
           <p className="text-right p-5 uppercase"> {plantCount} Pflanzen</p>
           <div className="grid grid-flow-row grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {roomData?.plants.map((plant: PlantInterface, index: number) => (
