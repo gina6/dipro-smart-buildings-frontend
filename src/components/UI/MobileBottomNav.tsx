@@ -28,7 +28,10 @@ export default function MobileBottomNav() {
           </div>
         </div>
         <div className="flex flex-col w-full h-14 ">
-          <div className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl shadow-top">
+          <div
+            className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl shadow-top"
+            onClick={() => setSearchOpen(false)}
+          >
             <MobileBottomNavButton
               linkTo="/"
               active={activeTab}
