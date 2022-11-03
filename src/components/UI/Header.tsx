@@ -1,10 +1,9 @@
-import React, { useState } from "react";
 import { ReactComponent as HeaderBG } from "../../assets/BG-Secondary-Green.svg";
 import { ReactComponent as Logo } from "../../icons/Logo.svg";
 
 interface HeaderProps {
-  headerTitle?: string | undefined;
-  headerSubtitle?: string | undefined;
+  headerTitle?: string | JSX.Element;
+  headerSubtitle?: string;
 }
 
 export default function Header({
@@ -15,7 +14,7 @@ export default function Header({
     <div className="w-full">
       {/* Mobile and Tablet Navbar */}
       <div className="relative w-full h-[150px] lg:hidden">
-        <div className="w-full h-1/3 flex items-center justify-end px-5">
+        <div className="w-full h-1/3 flex items-start justify-end px-5 pt-3">
           <Logo className="w-8 h-8"></Logo>
         </div>
         <div className="w-full h-2/3 flex flex-col items-center justify-center">

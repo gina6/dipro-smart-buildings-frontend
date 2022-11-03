@@ -62,7 +62,7 @@ export default function PlantDetail() {
 
   return (
     <>
-      <Header headerTitle={plantData?.plantSpecies} headerSubtitle={plantData?.roomLabel}/>
+      <Header headerTitle={plantData?.plantSpecies} headerSubtitle={`${plantData?.floorLabel} | ${plantData?.roomLabel}`}/>
       <BackLink />
       <Container>
         <div className="mx-auto max-w-3xl">

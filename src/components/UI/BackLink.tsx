@@ -15,7 +15,7 @@ export default function BackLink() {
         <Chevron className="mr-2"></Chevron>
         <p>Zurück</p>
       </div>
-      <BackBG className="absolute top-0 -z-10 h-16" />
+      <BackBG className="absolute top-0 -z-10 h-16 drop-shadow-sm" />
     </div>
   );
 }

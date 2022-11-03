@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useApiGet } from "../../hook/useApiHook";
 import { FloorInterface } from "../../hook/dataInterfaces";
 import RoomBox from "../UI/RoomBox";
-import { ReactComponent as Logo } from "../../icons/Logo.svg";
+import Container from "../UI/Container";
+import Header from "../UI/Header";
 import Dropdown from "../UI/Dopdown";
 
 export default function Floor() {
@@ -14,29 +15,28 @@ export default function Floor() {
   }
 
   return (
-    <div>
-      <div className="flex flex-col">
-        <div className="flex self-end">
-          <Logo className="w-10 h-10"></Logo>
+    <>
+      <Header
+        headerTitle={<Dropdown changeFloorId={changeFloorId}></Dropdown>}
+        headerSubtitle={"Pflanzenlexikon"}
+      />
+      <Container>
+        <div className="flex flex-col">
+          <div className="flex flex-row mt-10">
+            {floorData?.rooms
+              .filter((room) => room.plantCount !== 0)
+              .map((filteredRoom, index: number) => (
+                <RoomBox
+                  key={index}
+                  linkTo={`/rooms/${filteredRoom.roomId}`}
+                  roomLabel={filteredRoom.roomLabel}
+                  plantCount={filteredRoom.plantCount}
+                  plantImgs={filteredRoom.plantImages}
+                ></RoomBox>
+              ))}
+          </div>
         </div>
-        <div className="flex flex-col items-center">
-          <p className="text-green font-light">Pflanzenlexikon</p>
-          <Dropdown changeFloorId={changeFloorId}></Dropdown>
-        </div>
-        <div className="flex flex-row mt-10">
-          {floorData?.rooms
-            .filter((room) => room.plantCount !== 0)
-            .map((filteredRoom, index: number) => (
-              <RoomBox
-                key={index}
-                linkTo={`/rooms/${filteredRoom.roomId}`}
-                roomLabel={filteredRoom.roomLabel}
-                plantCount={filteredRoom.plantCount}
-                plantImgs={filteredRoom.plantImages}
-              ></RoomBox>
-            ))}
-        </div>
-      </div>
-    </div>
+      </Container>
+    </>
   );
 }
