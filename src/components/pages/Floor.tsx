@@ -4,7 +4,7 @@ import { FloorInterface } from "../../hook/dataInterfaces";
 import RoomBox from "../UI/RoomBox";
 import Container from "../UI/Container";
 import Header from "../UI/Header";
-import Dropdown from "../UI/Dopdown";
+import Dropdown from "../UI/Dropdown";
 
 export default function Floor() {
   const [floorId, setFloorId] = useState("floor4");
