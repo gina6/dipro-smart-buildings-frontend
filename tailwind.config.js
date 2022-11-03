@@ -4,6 +4,11 @@ const { url } = require('inspector');
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    extend: {
+      boxShadow: {
+        top: '2px -1px 8px 2px rgba(0, 0, 0, 0.1)',
+      },
+    },
     colors: {
       green: "#37523B",
       mediumGreen: "#6D9C4E",

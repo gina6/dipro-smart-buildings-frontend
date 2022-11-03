@@ -18,6 +18,8 @@ export const useApiGet = <T>(route: string | null): TApiResponse<T> => {
     const getApiData = useCallback(
         async () => {
             setLoading(true);
+            setData(undefined);
+            setError(undefined);
             try {
                 if (route) {
                     const apiResponse = await fetch(process.env.REACT_APP_BACKEND_API + route);
