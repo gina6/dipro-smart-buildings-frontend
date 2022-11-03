@@ -19,13 +19,16 @@ export default function MobileBottomNav() {
     <div className="bottom-0 fixed w-full">
       {searchOpen && <PlantSearch closeSearch={toggleSearch}></PlantSearch>}
       <div className="flex justify-center drop-shadow-md">
-        <div className="flex justify-center bottom-5 z-10 bg-green rounded-full fixed drop-shadow-md">
+        <div
+          className="flex justify-center bottom-5 z-10 bg-green rounded-full fixed drop-shadow-md cursor-pointer"
+          onClick={toggleSearch}
+        >
           <div className="p-3">
-            <Pflanzensuche onClick={toggleSearch} />
+            <Pflanzensuche />
           </div>
         </div>
         <div className="flex flex-col w-full h-14 ">
-          <div className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl">
+          <div className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl shadow-top">
             <MobileBottomNavButton
               linkTo="/"
               active={activeTab}
