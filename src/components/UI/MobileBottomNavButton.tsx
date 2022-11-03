@@ -34,23 +34,23 @@ export default function MobileBottomNavButton({
     </div>
 
     {/* Desktop NavBar Button */}
+      <Link
+        className="hidden lg:block p-5 cursor-pointer"
+        to={linkTo}
+        onClick={setActiveTab}
+      >
     <div
-      className={`hidden lg:block p-5 ${
+      className={`flex justify-center items-center h-full w-full ${
         active ? "fill-green" : "stroke-plantGreen"
       }`}
-      onClick={setActiveTab}
     >
-      <Link
-        className="flex justify-center items-center h-full w-full"
-        to={linkTo}
-      >
         {childIcon}
         {buttonText && <h3 className={`text-xl pl-2 ${
         active ? "text-green" : "text-darkGrey"
       }`}>{buttonText}</h3>}
         
-      </Link>
     </div>
+      </Link>
         </>
   );
 }
