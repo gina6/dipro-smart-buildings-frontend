@@ -1,5 +1,5 @@
 import React from "react";
-import { FiChevronRight } from "react-icons/fi";
+import { ReactComponent as ChevronRight } from "../../icons/Chevron-right.svg";
 import plantCare from "../../icons/Wassertropf white.svg";
 import { Link } from "react-router-dom";
 
@@ -47,7 +47,7 @@ export default function NotificationAlert({
             </div>
           </div>
           <div className="flex items-center h-20">
-            <FiChevronRight className="scale-150  text-darkGrey m-3	" />
+            <ChevronRight className="scale-150  text-darkGrey m-3	" />
           </div>
         </div>
       </div>
