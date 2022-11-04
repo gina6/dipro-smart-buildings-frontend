@@ -15,18 +15,15 @@ export default function RoomBox({
   plantImgs,
 }: RoomBoxProp) {
   return (
-    <Link
-      to={linkTo}
-      className="bg-white rounded-3xl overflow-hidden "
-    >
+    <Link to={linkTo} className="bg-white rounded-3xl overflow-hidden ">
       <div className="grid grid-cols-2 gap-2 sm:gap-3 m-3 md:m-5">
         {plantImgs.map((plantImg: string, index: number) => (
-          <img
-            key={index}
-            alt="Pflanze"
-            src={`${process.env.REACT_APP_BACKEND_API}${plantImg}`}
-            className="h-full aspect-square drop-shadow-lg object-cover rounded-lg"
-          />
+          <div
+            className="aspect-square w-full bg-center bg-cover rounded-md"
+            style={{
+              backgroundImage: `url("${process.env.REACT_APP_BACKEND_API}${plantImg}")`,
+            }}
+          ></div>
         ))}
       </div>
       <div className="text-center text-green m-2">
