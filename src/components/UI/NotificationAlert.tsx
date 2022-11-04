@@ -47,7 +47,7 @@ export default function NotificationAlert({
             </div>
           </div>
           <div className="flex items-center h-20">
-            <ChevronRight className="scale-150  text-darkGrey m-3	" />
+            <ChevronRight className="scale-150 text-darkGrey m-3	" />
           </div>
         </div>
       </div>
