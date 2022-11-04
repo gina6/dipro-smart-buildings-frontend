@@ -20,7 +20,7 @@ export default function NotificationAlert({
 }: NotificationDetails) {
   return (
     <Link to={`/rooms/${roomID}/${plantID}`}>
-      <div className="flex items-center bg-gray-200 mb-3 rounded-lg bg-white gap-6">
+      <div className="flex items-center mb-3 rounded-lg bg-white gap-6">
         <div
           className="h-28 w-1/4 bg-center bg-cover rounded-l-lg "
           style={{

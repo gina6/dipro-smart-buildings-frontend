@@ -19,7 +19,7 @@ export default function Notifications() {
               <h3 className="text-green pb-2 text-base">
                 {notifications[0].floor}
               </h3>
-              <div className="md:flex md:gap-5">
+              <div className="md:grid md:grid-flow-col md:grid-col-2 md:gap-6">
                 {notifications?.map(
                   (notification: NotificationInterface, index: number) => (
                     <NotificationAlert
