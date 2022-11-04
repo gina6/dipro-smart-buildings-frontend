@@ -8,7 +8,7 @@ export default function BackLink() {
 
   return (
     <div
-      className="fixed flex left-0 top-0 cursor-pointer h-[50px] text-white z-10"
+      className="fixed flex left-0 top-0 cursor-pointer h-[50px] text-white z-30"
       onClick={() => navigate(-1)}
     >
       <div className="flex items-center pl-5">

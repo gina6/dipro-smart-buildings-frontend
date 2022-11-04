@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { generatePath, useNavigate } from "react-router-dom";
 import { useApiGet } from "../../hook/useApiHook";
 import { PlantInterface } from "../../hook/dataInterfaces";
@@ -54,13 +55,13 @@ export default function PlantSearch({ closeSearch }: OverlayProps) {
     }
   }
 
-  return (
+  return createPortal(
     <div
       className="fixed top-0 bottom-0 left-0 right-0 bg-[black]/40 z-20"
       onClick={closeSearch}
     >
       <div
-        className="absolute bottom-0 w-full pb-28 bg-white rounded-t-2xl flex flex-col items-center shadow-top"
+        className="absolute bottom-0 w-full pb-10 bg-white rounded-t-2xl flex flex-col items-center shadow-top"
         onClick={stopPropagation}
       >
         <div onClick={closeSearch} className="p-5 self-end cursor-pointer">
@@ -87,6 +88,7 @@ export default function PlantSearch({ closeSearch }: OverlayProps) {
           Suchen
         </PrimaryButton>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
