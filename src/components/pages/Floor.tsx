@@ -11,7 +11,7 @@ export default function Floor() {
   const floorData = useApiGet<FloorInterface>(`/floors/${floorId}`).data;
   const plantCount = countPlants();
 
-  function countPlants () {
+  function countPlants() {
     let count = 0;
 
     floorData?.rooms.forEach((room) => {
@@ -27,32 +27,34 @@ export default function Floor() {
   return (
     <>
       <Header
-        headerTitle={<Dropdown changeFloorId={changeFloorId}></Dropdown>}
+        headerTitle={
+          <Dropdown changeFloorId={changeFloorId} fullWidth></Dropdown>
+        }
         headerSubtitle={"Pflanzenlexikon"}
       />
-        <Container>
+      <Container>
         <div className="hidden lg:block px-5 text-green">
-        <Dropdown changeFloorId={changeFloorId}></Dropdown>
+          <Dropdown changeFloorId={changeFloorId}></Dropdown>
         </div>
-          <div className="flex flex-col mb-28">
+        <div className="flex flex-col mb-28">
           <p className="text-right lg:text-left p-5 uppercase text-green">
             {plantCount} Pflanzen
           </p>
-            <div className="grid grid-flow-row grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-              {floorData?.rooms
-                .filter((room) => room.plantCount !== 0)
-                .map((filteredRoom, index: number) => (
-                  <RoomBox
-                    key={index}
-                    linkTo={`/rooms/${filteredRoom.roomId}`}
-                    roomLabel={filteredRoom.roomLabel}
-                    plantCount={filteredRoom.plantCount}
-                    plantImgs={filteredRoom.plantImages}
-                  ></RoomBox>
-                ))}
-            </div>
+          <div className="grid grid-flow-row grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+            {floorData?.rooms
+              .filter((room) => room.plantCount !== 0)
+              .map((filteredRoom, index: number) => (
+                <RoomBox
+                  key={index}
+                  linkTo={`/rooms/${filteredRoom.roomId}`}
+                  roomLabel={filteredRoom.roomLabel}
+                  plantCount={filteredRoom.plantCount}
+                  plantImgs={filteredRoom.plantImages}
+                ></RoomBox>
+              ))}
           </div>
-        </Container>
+        </div>
+      </Container>
     </>
   );
 }
