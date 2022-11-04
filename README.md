@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Plants in Smart Buildings
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend for an integration of plants in smart buildings.
 
-## Available Scripts
+- [View Demo Site](https://dipro-smart-building.netlify.app/) (preferably on mobile)
 
-In the project directory, you can run:
+## Project Summary
 
-### `npm start`
+For the module "Digital Project" we created an integration of plants in smart buildings. We worked in an interdisciplinary team of six people. With three people dedicated to design and three people in the development team.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The products of our project were a High-Fidelity Prototype in Figma and a full-stack Web-App. We built our own semantic model of a building using [Brick Schema](https://brickschema.org/) and stored it using [GraphDB](https://graphdb.ontotext.com/). For live sensor data we built a small arduino prototype with different sensors and stored the sonsor data with [InfluxDB](https://www.influxdata.com/). Finally to acces all the data and send it to the frontend we created a NodeJS backend.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The backend is hosted on our university-own [EnterpriseLab](https://eportal.enterpriselab.ch/) and the frontend was deployed on [Netlify](https://www.netlify.com/).
 
-### `npm test`
+## Quick Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Backend Repository](https://github.com/patriciqa/dipro-smart-gardening-backend)
+- [Arduino Repository](https://github.com/domi-b/dipro-smart-buildings-arduino)
+- [Figma Prototype](https://www.figma.com/proto/ohBlXQhGunPGbnQFVygLhO/DIPRO---Design-Konzept?node-id=738%3A8435&scaling=scale-down&page-id=609%3A2480&starting-point-node-id=738%3A8435&show-proto-sidebar=1)
 
-### `npm run build`
+## Technology Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Create React App with TypeScript](https://create-react-app.dev/docs/adding-typescript/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Run Locally
 
-### `npm run eject`
+### Clone Repo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+git clone https://github.com/gina6/dipro-smart-buildings-frontend.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Run App
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start
+```

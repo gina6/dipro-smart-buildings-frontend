@@ -62,18 +62,27 @@ export default function PlantDetail() {
 
   return (
     <>
-      <Header headerTitle={plantData?.plantSpecies} headerSubtitle={`${plantData?.floorLabel} | ${plantData?.roomLabel}`}/>
+      <Header
+        headerTitle={plantData?.plantSpecies}
+        headerSubtitle={`${plantData?.floorLabel} | ${plantData?.roomLabel}`}
+      />
       <BackLink />
       <Container>
         <div className="mx-auto max-w-3xl">
+          <div className="hidden lg:block text-green px-5">
+            <p>{`${plantData?.floorLabel} | ${plantData?.roomLabel}`}</p>
+            <h1 className="text-3xl">{plantData?.plantSpecies}</h1>
+          </div>
           <ContentBox>
-            {plantData && (
-              <img
-                src={`${process.env.REACT_APP_BACKEND_API}${plantData.plantImage}`}
-                alt="Plant in the room"
-                className="rounded-2xl"
-              />
-            )}
+            <div className="w-full aspect-[16/9]">
+              {plantData && (
+                <img
+                  src={`${process.env.REACT_APP_BACKEND_API}${plantData.plantImage}`}
+                  alt="Plant in the room"
+                  className="rounded-2xl object-cover h-full w-full"
+                />
+              )}
+            </div>
             <RoomSensorData
               temp={roomData?.airTemp}
               soilMoisture={plantData?.soilMoisture}

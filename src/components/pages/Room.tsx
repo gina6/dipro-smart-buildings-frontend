@@ -20,8 +20,14 @@ export default function Room() {
       />
       <BackLink />
       <Container>
-        <div className="flex flex-col">
-          <p className="text-right p-5 uppercase"> {plantCount} Pflanzen</p>
+        <div className="hidden lg:block px-5 text-green">
+          <p>{roomData?.floorLabel}</p>
+          <h1 className="text-3xl">{roomData?.roomLabel}</h1>
+        </div>
+        <div>
+          <p className="text-right lg:text-left p-5 uppercase text-green">
+            {plantCount} Pflanzen
+          </p>
           <div className="grid grid-flow-row grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {roomData?.plants.map((plant: PlantInterface, index: number) => (
               <PlantBox
