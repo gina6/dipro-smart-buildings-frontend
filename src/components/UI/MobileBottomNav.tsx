@@ -30,7 +30,10 @@ export default function MobileBottomNav() {
             </div>
           </div>
           <div className="flex flex-col w-full h-14 ">
-            <div className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl shadow-top">
+            <div
+              className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl shadow-top"
+              onClick={() => setSearchOpen(false)}
+            >
               <MobileBottomNavButton
                 linkTo="/"
                 active={activeTab}
@@ -50,25 +53,25 @@ export default function MobileBottomNav() {
 
       {/* Desktop Header */}
       <div className="absolute top-16 w-full hidden lg:block bg-white">
-          <div className="flex flex-col max-w-6xl m-auto h-16 ">
-            <div className="flex flex-row w-full h-full items-center">
-              <MobileBottomNavButton
-                linkTo="/"
-                active={activeTab}
-                childIcon={<Notficationbell />}
-                buttonText={"Benachrichtigungen"}
-                setActiveTab={() => setActiveTab(true)}
-                />
-                <div className="h-9 w-px mx-2 rounded-full self-center bg-lightGrey"></div>
-              <MobileBottomNavButton
-                linkTo="/floors/"
-                active={!activeTab}
-                buttonText={"Pflanzenlexikon"}
-                childIcon={<Pflanzenlexikon />}
-                setActiveTab={() => setActiveTab(false)}
-              />
-            </div>
+        <div className="flex flex-col max-w-6xl m-auto h-16 ">
+          <div className="flex flex-row w-full h-full items-center">
+            <MobileBottomNavButton
+              linkTo="/"
+              active={activeTab}
+              childIcon={<Notficationbell />}
+              buttonText={"Benachrichtigungen"}
+              setActiveTab={() => setActiveTab(true)}
+            />
+            <div className="h-9 w-px mx-2 rounded-full self-center bg-lightGrey"></div>
+            <MobileBottomNavButton
+              linkTo="/floors/"
+              active={!activeTab}
+              buttonText={"Pflanzenlexikon"}
+              childIcon={<Pflanzenlexikon />}
+              setActiveTab={() => setActiveTab(false)}
+            />
           </div>
+        </div>
       </div>
     </>
   );

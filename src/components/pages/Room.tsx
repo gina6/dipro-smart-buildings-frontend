@@ -24,7 +24,7 @@ export default function Room() {
           <p>{roomData?.floorLabel}</p>
           <h1 className="text-3xl">{roomData?.roomLabel}</h1>
         </div>
-        <div className="mb-28">
+        <div>
           <p className="text-right lg:text-left p-5 uppercase text-green">
             {plantCount} Pflanzen
           </p>
