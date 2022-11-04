@@ -8,7 +8,7 @@ Frontend for an integration of plants in smart buildings.
 
 For the module "Digital Project" we created an integration of plants in smart buildings. We worked in an interdisciplinary team of six people. With three people dedicated to design and three people in the development team.
 
-The products of our project were a High-Fidelity Prototype in Figma and a full-stack Web-App. We built our own semantic model of a building using [Brick Schema](https://brickschema.org/) and stored it using [GraphDB](https://graphdb.ontotext.com/). For live sensor data we built a small arduino prototype with different sensors and stored the sonsor data with [InfluxDB](https://www.influxdata.com/). Finally to acces all the data and send it to the frontend we created a NodeJS backend.
+The products of our project were a High-Fidelity Prototype in Figma and a full-stack Web-App. We built our own semantic model of a building using [Brick Schema](https://brickschema.org/) and stored it using [GraphDB](https://graphdb.ontotext.com/). For live sensor data we built a small arduino prototype with different sensors and stored the sensor data with [InfluxDB](https://www.influxdata.com/). The notifications that show up on the frontend are stored in a [MySQL](https://www.mysql.com/) Database. Finally to acces all the data and send it to the frontend we created a NodeJS backend.
 
 The backend is hosted on our university-own [EnterpriseLab](https://eportal.enterpriselab.ch/) and the frontend was deployed on [Netlify](https://www.netlify.com/).
 
