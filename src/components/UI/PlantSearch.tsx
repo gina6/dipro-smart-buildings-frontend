@@ -56,14 +56,14 @@ export default function PlantSearch({ closeSearch }: OverlayProps) {
 
   return (
     <div
-      className="fixed top-0 bottom-0 left-0 right-0 bg-[black]/40"
+      className="fixed top-0 bottom-0 left-0 right-0 bg-[black]/40 z-20"
       onClick={closeSearch}
     >
       <div
-        className="absolute bottom-0 w-full p-5 pb-28 bg-white rounded-t-2xl flex flex-col items-center shadow-top"
+        className="absolute bottom-0 w-full pb-28 bg-white rounded-t-2xl flex flex-col items-center shadow-top"
         onClick={stopPropagation}
       >
-        <div onClick={closeSearch} className="self-end">
+        <div onClick={closeSearch} className="p-5 self-end cursor-pointer">
           <Close />
         </div>
         <h2 className="mt-4">Pflanzen-ID eingeben</h2>

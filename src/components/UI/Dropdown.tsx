@@ -51,9 +51,9 @@ export default function Dropdown({ changeFloorId, fullWidth }: DrowpdownProps) {
   return (
     <div>
       <button
-        className={`flex items-center p-2 ${
+        className={`flex items-center rounded-md transition-colors p-2 ${
           fullWidth ? "" : "pl-0"
-        } font-bold text-xl hover:text-gray-700 hover:bg-gray-50`}
+        } font-bold text-xl hover:text-gray-700 hover:bg-white`}
         onClick={() => {
           showDropdown ? setShowDropdown(false) : setShowDropdown(true);
         }}

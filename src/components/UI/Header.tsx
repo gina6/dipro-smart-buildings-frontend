@@ -30,7 +30,7 @@ export default function Header({ headerTitle, headerSubtitle }: HeaderProps) {
             <Logo className="w-8 h-8 origin-center hover:scale-125 transition-transform" />
           </div>
         </div>
-         {/*  <div className="max-w-3xl m-auto pt-24 text-green">
+        {/*  <div className="max-w-3xl m-auto pt-24 text-green">
             <p>{headerSubtitle}</p>
             <h1 className="text-3xl">{headerTitle}</h1>
           </div> */}

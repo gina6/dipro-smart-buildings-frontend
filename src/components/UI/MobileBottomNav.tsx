@@ -53,8 +53,8 @@ export default function MobileBottomNav() {
 
       {/* Desktop Header */}
       <div className="absolute top-16 w-full hidden lg:block bg-white">
-        <div className="flex flex-col max-w-6xl m-auto h-16 ">
-          <div className="flex flex-row w-full h-full items-center">
+        <div className="max-w-6xl m-auto h-16 ">
+          <div className="relative flex flex-row w-full h-full items-center">
             <MobileBottomNavButton
               linkTo="/"
               active={activeTab}
@@ -70,6 +70,18 @@ export default function MobileBottomNav() {
               childIcon={<Pflanzenlexikon />}
               setActiveTab={() => setActiveTab(false)}
             />
+            {searchOpen && (
+              <PlantSearch closeSearch={toggleSearch}></PlantSearch>
+            )}
+            <div className="absolute right-0 h-full flex items-center justify-end px-5">
+              <div
+                className="flex justify-center items-center px-3 py-2 bg-green rounded-lg drop-shadow-md cursor-pointer"
+                onClick={toggleSearch}
+              >
+                <Pflanzensuche />
+                <h3 className="text-lightGrey pl-1">Pflanzensuche</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
