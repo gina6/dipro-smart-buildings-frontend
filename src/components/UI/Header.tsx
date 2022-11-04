@@ -6,13 +6,10 @@ interface HeaderProps {
   headerSubtitle?: string;
 }
 
-export default function Header({
-  headerTitle,
-  headerSubtitle,
-}: HeaderProps) {
+export default function Header({ headerTitle, headerSubtitle }: HeaderProps) {
   return (
-    <div className="w-full">
-      {/* Mobile and Tablet Navbar */}
+    <>
+      {/* Mobile and Tablet Header */}
       <div className="relative w-full h-[150px] lg:hidden">
         <div className="w-full h-1/3 flex items-start justify-end px-5 pt-3">
           <Logo className="w-8 h-8"></Logo>
@@ -26,8 +23,18 @@ export default function Header({
         <HeaderBG className="absolute top-0 -z-10 w-full h-[120%]" />
       </div>
 
-      {/* Desktop Navbar */}
-      <div className="w-full h-16 bg-plantGreen hidden lg:block"></div>
-    </div>
+      {/* Desktop Header */}
+      <div className="h-auto">
+        <div className="w-full h-16 bg-plantGreen hidden lg:block">
+          <div className="flex h-full px-5 items-center justify-end text-green text-center">
+            <Logo className="w-8 h-8 origin-center hover:scale-125 transition-transform" />
+          </div>
+        </div>
+         {/*  <div className="max-w-3xl m-auto pt-24 text-green">
+            <p>{headerSubtitle}</p>
+            <h1 className="text-3xl">{headerTitle}</h1>
+          </div> */}
+      </div>
+    </>
   );
 }
