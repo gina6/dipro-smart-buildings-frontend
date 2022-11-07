@@ -18,20 +18,20 @@ export default function MobileBottomNav() {
   return (
     <>
       {/* Mobile and Tablet Navbar */}
-      <div className="bottom-0 fixed w-full lg:hidden">
+      <div className="fixed bottom-0 w-full lg:hidden">
         {searchOpen && <PlantSearch closeSearch={toggleSearch}></PlantSearch>}
         <div className="flex justify-center drop-shadow-md">
           <div
-            className="flex justify-center bottom-5 z-10 bg-green rounded-full fixed drop-shadow-md cursor-pointer"
+            className="fixed bottom-5 z-10 flex cursor-pointer justify-center rounded-full bg-green drop-shadow-md"
             onClick={toggleSearch}
           >
             <div className="p-3">
               <Pflanzensuche />
             </div>
           </div>
-          <div className="flex flex-col w-full h-14 ">
+          <div className="flex h-14 w-full flex-col ">
             <div
-              className="flex flex-row w-full h-14 items-center bg-white rounded-t-2xl shadow-top"
+              className="flex h-14 w-full flex-row items-center rounded-t-2xl bg-white shadow-top"
               onClick={() => setSearchOpen(false)}
             >
               <MobileBottomNavButton
@@ -52,9 +52,9 @@ export default function MobileBottomNav() {
       </div>
 
       {/* Desktop Header */}
-      <div className="absolute top-16 w-full hidden lg:block bg-white">
-        <div className="max-w-6xl m-auto h-16 ">
-          <div className="relative flex flex-row w-full h-full items-center">
+      <div className="absolute top-16 hidden w-full bg-white lg:block">
+        <div className="m-auto h-16 max-w-6xl ">
+          <div className="relative flex h-full w-full flex-row items-center">
             <MobileBottomNavButton
               linkTo="/"
               active={activeTab}
@@ -62,7 +62,7 @@ export default function MobileBottomNav() {
               buttonText={"Benachrichtigungen"}
               setActiveTab={() => setActiveTab(true)}
             />
-            <div className="h-9 w-px mx-2 rounded-full self-center bg-lightGrey"></div>
+            <div className="mx-2 h-9 w-px self-center rounded-full bg-lightGrey"></div>
             <MobileBottomNavButton
               linkTo="/floors/"
               active={!activeTab}
@@ -73,13 +73,13 @@ export default function MobileBottomNav() {
             {searchOpen && (
               <PlantSearch closeSearch={toggleSearch}></PlantSearch>
             )}
-            <div className="absolute right-0 h-full flex items-center justify-end px-5">
+            <div className="absolute right-0 flex h-full items-center justify-end px-5">
               <div
-                className="flex justify-center items-center px-3 py-2 bg-green rounded-lg drop-shadow-md cursor-pointer"
+                className="flex cursor-pointer items-center justify-center rounded-lg bg-green px-3 py-2 drop-shadow-md"
                 onClick={toggleSearch}
               >
                 <Pflanzensuche />
-                <h3 className="text-lightGrey pl-1">Pflanzensuche</h3>
+                <h3 className="pl-1 text-lightGrey">Pflanzensuche</h3>
               </div>
             </div>
           </div>

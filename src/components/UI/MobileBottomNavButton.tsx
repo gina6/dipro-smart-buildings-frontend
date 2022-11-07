@@ -20,13 +20,13 @@ export default function MobileBottomNavButton({
     <>
       {/* Mobile and Tablet NavBar Button */}
       <div
-        className={`h-full border-b-4 w-1/2 border-white lg:hidden ${
+        className={`h-full w-1/2 border-b-4 border-white lg:hidden ${
           active ? " !border-green" : "stroke-plantGreen"
         }`}
         onClick={setActiveTab}
       >
         <Link
-          className="flex justify-center items-center h-full w-full"
+          className="flex h-full w-full items-center justify-center"
           to={linkTo}
         >
           {childIcon}
@@ -35,19 +35,19 @@ export default function MobileBottomNavButton({
 
       {/* Desktop NavBar Button */}
       <Link
-        className="hidden lg:block p-5 cursor-pointer"
+        className="hidden cursor-pointer p-5 lg:block"
         to={linkTo}
         onClick={setActiveTab}
       >
         <div
-          className={`flex justify-center items-center h-full w-full ${
+          className={`flex h-full w-full items-center justify-center ${
             active ? "fill-green" : "stroke-plantGreen"
           }`}
         >
           {childIcon}
           {buttonText && (
             <h3
-              className={`text-xl pl-2 ${
+              className={`pl-2 text-xl ${
                 active ? "text-green" : "text-darkGrey"
               }`}
             >

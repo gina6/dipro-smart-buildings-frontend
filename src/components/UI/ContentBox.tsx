@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function ContentBox({ children }: React.PropsWithChildren) {
-  return <div className="p-3 mt-5 bg-white rounded-3xl">{children}</div>;
+  return <div className="mt-5 rounded-3xl bg-white p-3">{children}</div>;
 }

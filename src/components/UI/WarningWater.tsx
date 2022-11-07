@@ -24,7 +24,7 @@ function getTimeDuration(since: Date) {
 
 export default function WarningWater({ date }: WarningProps) {
   return (
-    <div className="my-5 bg-water text-white rounded-xl">
+    <div className="my-5 rounded-xl bg-water text-white">
       <div className="flex items-center">
         <div className="p-4">
           <Wassertropf className="scale-150" />

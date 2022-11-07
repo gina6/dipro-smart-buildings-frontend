@@ -33,11 +33,11 @@ export default function Floor() {
         headerSubtitle={"Pflanzenlexikon"}
       />
       <Container>
-        <div className="hidden lg:block px-5 text-green">
+        <div className="hidden px-5 text-green lg:block">
           <Dropdown changeFloorId={changeFloorId}></Dropdown>
         </div>
-        <div className="flex flex-col mb-28">
-          <p className="text-right lg:text-left p-5 uppercase text-green">
+        <div className="mb-28 flex flex-col">
+          <p className="p-5 text-right uppercase text-green lg:text-left">
             {plantCount} Pflanzen
           </p>
           <div className="grid grid-flow-row grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">

@@ -9,7 +9,7 @@ export default function PrimaryButton({
       {...props}
       className={`${
         props.disabled ? "bg-darkGrey" : "bg-green"
-      } text-white px-6 py-2 rounded-lg ${props.className ?? ""}`}
+      } rounded-lg px-6 py-2 text-white ${props.className ?? ""}`}
     >
       {children}
     </button>

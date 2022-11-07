@@ -69,17 +69,17 @@ export default function PlantDetail() {
       <BackLink />
       <Container>
         <div className="mx-auto max-w-3xl">
-          <div className="hidden lg:block text-green px-5">
+          <div className="hidden px-5 text-green lg:block">
             <p>{`${plantData?.floorLabel} | ${plantData?.roomLabel}`}</p>
             <h1 className="text-3xl">{plantData?.plantSpecies}</h1>
           </div>
           <ContentBox>
-            <div className="w-full aspect-[16/9]">
+            <div className="aspect-[16/9] w-full">
               {plantData && (
                 <img
                   src={`${process.env.REACT_APP_BACKEND_API}${plantData.plantImage}`}
                   alt="Plant in the room"
-                  className="rounded-2xl object-cover h-full w-full"
+                  className="h-full w-full rounded-2xl object-cover"
                 />
               )}
             </div>
@@ -98,7 +98,7 @@ export default function PlantDetail() {
           <ContentBox>
             <div className="flex items-center justify-center py-5">
               <h2>ID: {plantID}</h2>
-              <p className="text-xs pl-2">Pflanzenprofil</p>
+              <p className="pl-2 text-xs">Pflanzenprofil</p>
             </div>
             <div className="flex flex-col">
               <TableRow>
@@ -155,7 +155,7 @@ export default function PlantDetail() {
               <p className="text-mediumGreen">
                 {formatDate(plantData?.lastService)}
               </p>
-              <div className="h-px w-1/3 my-1 rounded-full bg-lightGrey"></div>
+              <div className="my-1 h-px w-1/3 rounded-full bg-lightGrey"></div>
               <p>
                 <b>Nächster Pflegetermin</b>
               </p>

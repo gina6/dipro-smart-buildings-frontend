@@ -30,12 +30,12 @@ export default function Dropdown({ changeFloorId, fullWidth }: DrowpdownProps) {
   };
 
   const dropdownContent = (
-    <div className="flex justify-center w-full">
+    <div className="flex w-full justify-center">
       <div className="flex flex-col-reverse py-4">
         {floorsData?.map((floor) => (
           <button
             key={floor.floorId}
-            className="px-12 py-4 font-bold text-xl text-plantGreen hover:text-white"
+            className="px-12 py-4 text-xl font-bold text-plantGreen hover:text-white"
             onClick={() => {
               onChange(floor.floorId);
               setShowDropdown(false);
@@ -51,9 +51,9 @@ export default function Dropdown({ changeFloorId, fullWidth }: DrowpdownProps) {
   return (
     <div>
       <button
-        className={`flex items-center rounded-md transition-colors p-2 ${
+        className={`flex items-center rounded-md p-2 transition-colors ${
           fullWidth ? "" : "pl-0"
-        } font-bold text-xl hover:text-gray-700 hover:bg-white`}
+        } text-xl font-bold hover:bg-white hover:text-gray-700`}
         onClick={() => {
           showDropdown ? setShowDropdown(false) : setShowDropdown(true);
         }}
@@ -65,13 +65,13 @@ export default function Dropdown({ changeFloorId, fullWidth }: DrowpdownProps) {
       {showDropdown &&
         (fullWidth ? (
           createPortal(
-            <div className="flex justify-center absolute right-0 left-0 top-0 pt-[150px] bg-green rounded-b-2xl">
+            <div className="absolute right-0 left-0 top-0 flex justify-center rounded-b-2xl bg-green pt-[150px]">
               {dropdownContent}
             </div>,
             document.body
           )
         ) : (
-          <div className="absolute z-20 bg-green rounded-2xl -ml-12 [&_*]:text-left shadow-sm shadow-[black]/50">
+          <div className="absolute z-20 -ml-12 rounded-2xl bg-green shadow-sm shadow-[black]/50 [&_*]:text-left">
             {dropdownContent}
           </div>
         ))}

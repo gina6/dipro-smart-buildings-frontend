@@ -16,10 +16,10 @@ export default function Notifications() {
         <Container>
           {notifications && notifications?.length > 1 ? (
             <>
-              <h3 className="text-green pb-2 text-base">
+              <h3 className="pb-2 text-base text-green">
                 {notifications[0].floor}
               </h3>
-              <div className="md:grid md:grid-flow-col md:grid-col-2 md:gap-6">
+              <div className="md:grid-col-2 md:grid md:grid-flow-col md:gap-6">
                 {notifications?.map(
                   (notification: NotificationInterface, index: number) => (
                     <NotificationAlert
@@ -35,11 +35,11 @@ export default function Notifications() {
               </div>
             </>
           ) : (
-            <div className="flex h-[80vh] justify-center items-center	flex-col">
+            <div className="flex h-[80vh] flex-col items-center	justify-center">
               <div className="">
                 <img src={CheckIcon} alt="Everything okay" />
               </div>
-              <div className=" text-3xl text-green font-bold	pt-3">
+              <div className=" pt-3 text-3xl font-bold	text-green">
                 Alles in Ordnung!
               </div>
             </div>

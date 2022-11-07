@@ -15,16 +15,16 @@ export default function PlantBox({
   return (
     <Link
       to={linkTo}
-      className="relative flex items-center justify-center w-full aspect-square rounded-3xl overflow-hidden"
+      className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-3xl"
     >
-      <p className="text-white text-lg font-medium text-center drop-shadow-md p-5 -z-10">
+      <p className="-z-10 p-5 text-center text-lg font-medium text-white drop-shadow-md">
         {plantLabel}
       </p>
 
       <img
         src={`${process.env.REACT_APP_BACKEND_API}${plantImg}`}
         alt="Plant in the room"
-        className="absolute w-full h-full object-cover brightness-[.75] bg-darkGrey -z-20"
+        className="absolute -z-20 h-full w-full bg-darkGrey object-cover brightness-[.75]"
       />
     </Link>
   );

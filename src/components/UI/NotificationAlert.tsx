@@ -20,23 +20,23 @@ export default function NotificationAlert({
 }: NotificationDetails) {
   return (
     <Link to={`/rooms/${roomID}/${plantID}`}>
-      <div className="flex items-center mb-3 rounded-lg bg-white gap-6">
+      <div className="mb-3 flex items-center gap-6 rounded-lg bg-white">
         <div
-          className="h-28 w-1/4 bg-center bg-cover rounded-l-lg "
+          className="h-28 w-1/4 rounded-l-lg bg-cover bg-center "
           style={{
             backgroundImage: `url("${process.env.REACT_APP_BACKEND_API}${plantImg}")`,
           }}
         ></div>
-        <div className="flex justify-between w-full h-full">
+        <div className="flex h-full w-full justify-between">
           <div>
             <div className="flex items-center">
               <h3 className="text-green">{roomLabel}</h3>
-              <p className="text-darkGrey text-xs ml-3 bg-gr">ID: {plantID}</p>
+              <p className="bg-gr ml-3 text-xs text-darkGrey">ID: {plantID}</p>
             </div>
             <p className="text-sm text-green">{plantLabel}</p>
             <div>
-              <div className="flex w-fit my-1">
-                <div className="bg-water rounded-full drop-shadow-md">
+              <div className="my-1 flex w-fit">
+                <div className="rounded-full bg-water drop-shadow-md">
                   <img
                     src={plantCare}
                     alt="Plant Care Notification Icon"
@@ -46,8 +46,8 @@ export default function NotificationAlert({
               </div>
             </div>
           </div>
-          <div className="flex items-center h-20">
-            <ChevronRight className="scale-150 text-darkGrey m-3	" />
+          <div className="flex h-20 items-center">
+            <ChevronRight className="m-3 scale-150 text-darkGrey	" />
           </div>
         </div>
       </div>

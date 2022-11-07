@@ -20,12 +20,12 @@ export default function Room() {
       />
       <BackLink />
       <Container>
-        <div className="hidden lg:block px-5 text-green">
+        <div className="hidden px-5 text-green lg:block">
           <p>{roomData?.floorLabel}</p>
           <h1 className="text-3xl">{roomData?.roomLabel}</h1>
         </div>
         <div>
-          <p className="text-right lg:text-left p-5 uppercase text-green">
+          <p className="p-5 text-right uppercase text-green lg:text-left">
             {plantCount} Pflanzen
           </p>
           <div className="grid grid-flow-row grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">

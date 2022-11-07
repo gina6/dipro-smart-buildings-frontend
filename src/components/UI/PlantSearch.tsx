@@ -57,14 +57,14 @@ export default function PlantSearch({ closeSearch }: OverlayProps) {
 
   return createPortal(
     <div
-      className="fixed top-0 bottom-0 left-0 right-0 bg-[black]/40 z-40"
+      className="fixed top-0 bottom-0 left-0 right-0 z-40 bg-[black]/40"
       onClick={closeSearch}
     >
       <div
-        className="absolute bottom-0 w-full pb-10 bg-white rounded-t-2xl flex flex-col items-center shadow-top"
+        className="absolute bottom-0 flex w-full flex-col items-center rounded-t-2xl bg-white pb-10 shadow-top"
         onClick={stopPropagation}
       >
-        <div onClick={closeSearch} className="p-5 self-end cursor-pointer">
+        <div onClick={closeSearch} className="cursor-pointer self-end p-5">
           <Close />
         </div>
         <h2 className="mt-4">Pflanzen-ID eingeben</h2>
@@ -74,10 +74,10 @@ export default function PlantSearch({ closeSearch }: OverlayProps) {
           type="text"
           name="searchInput"
           autoComplete="off"
-          className="p-2 mt-8 border-b-2 border-b-darkGrey rounded-sm outline-none text-center"
+          className="mt-8 rounded-sm border-b-2 border-b-darkGrey p-2 text-center outline-none"
           placeholder="000_00"
         />
-        <p className="text-red mt-2 h-[1em]">
+        <p className="mt-2 h-[1em] text-red">
           {hasError && <b>Pflanze nicht gefunden!</b>}
         </p>
         <PrimaryButton
