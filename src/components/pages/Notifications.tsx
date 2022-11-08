@@ -14,7 +14,7 @@ export default function Notifications() {
       <Header headerTitle={"Benachrichtigungen"} />
       <div className="mt-6">
         <Container>
-          {notifications && notifications?.length > 1 ? (
+          {notifications && notifications?.length >= 1 ? (
             <>
               <h3 className="pb-2 text-base text-green">
                 {notifications[0].floor}
