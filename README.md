@@ -44,3 +44,13 @@ npm install
 ```
 npm start
 ```
+
+## Images (if backend is down)
+![Mobile-Notifications](https://user-images.githubusercontent.com/58468359/203506938-10bea550-822b-4bb4-9b8c-ce41cd7a7d1d.png)
+
+![Mobile-Lexikon-1](https://user-images.githubusercontent.com/58468359/203506838-6f95d7ed-415b-4c09-8aef-e8c87fbeacc2.png)
+![Mobile-Lexikon-2](https://user-images.githubusercontent.com/58468359/203506848-5a4c9e72-831e-4b96-ab93-84e3a9fceb94.png)
+![Mobile-Lexikon-3](https://user-images.githubusercontent.com/58468359/203506898-c07ffe17-3401-438f-8279-87aaae6eb259.png)
+![Mobile-Lexikon-4](https://user-images.githubusercontent.com/58468359/203506917-a2b0c499-a780-4243-8853-44c99e90770f.png)
+
+![Desktop-Lexikon](https://user-images.githubusercontent.com/58468359/203506975-61744da8-e68e-4e97-b17c-4ab683d5bf98.png)
