@@ -6,7 +6,12 @@ import {
   PlantInterface,
   NotificationInterface,
 } from "../../hook/dataInterfaces";
-import { useApiGet } from "../../hook/useApiHook";
+/* import { useApiGet } from "../../hook/useApiHook"; */
+import {
+  placeholderRoom,
+  placeholderNotifications,
+} from "../../hook/localData";
+
 import Container from "../UI/Container";
 import Header from "../UI/Header";
 import RoomSensorData from "../UI/RoomSensorData";
@@ -38,13 +43,21 @@ function getLightIcon(lightNeed: string | undefined) {
 }
 
 export default function PlantDetail() {
-  const { plantID, roomID } = useParams();
-  const plantData = useApiGet<PlantInterface>(`/plants/${plantID}`).data;
-  const roomData = useApiGet<RoomInterface>(`/rooms/${roomID}`).data;
-  const warningData = useApiGet<NotificationInterface[]>("/notifications").data;
-  const plantWarning = warningData?.find(
-    (warning) => warning.plantId === plantID
+  const { plantID, roomID } = useParams<{ plantID: string; roomID: string }>();
+  let plantData: PlantInterface | undefined;
+  let roomData: RoomInterface | undefined;
+  // Find room data
+  const foundRoom = placeholderRoom.find((room) => room.roomId === roomID);
+  if (foundRoom) {
+    roomData = foundRoom;
+    // Find plant data within the found room
+    plantData = foundRoom.plants.find((plant) => plant.plantId === plantID);
+  }
+
+  const plantWarning = placeholderNotifications.find(
+    (notification) => notification.plantId === plantID
   );
+
   let waterNeed = "";
   if (plantData) {
     switch (parseInt(plantData?.waterNeed)) {
@@ -77,7 +90,7 @@ export default function PlantDetail() {
             <div className="aspect-[16/9] w-full">
               {plantData && (
                 <img
-                  src={`${process.env.REACT_APP_BACKEND_API}${plantData.plantImage}`}
+                  src={"/images/" + plantData.plantImage}
                   alt="Plant in the room"
                   className="h-full w-full rounded-2xl object-cover"
                 />

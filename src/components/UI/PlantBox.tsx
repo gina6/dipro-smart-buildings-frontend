@@ -22,7 +22,7 @@ export default function PlantBox({
       </p>
 
       <img
-        src={`${process.env.REACT_APP_BACKEND_API}${plantImg}`}
+        src={"/images/" + plantImg}
         alt="Plant in the room"
         className="absolute -z-20 h-full w-full bg-darkGrey object-cover brightness-[.75]"
       />

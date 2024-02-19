@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { generatePath, useNavigate } from "react-router-dom";
-import { useApiGet } from "../../hook/useApiHook";
+/* import { useApiGet } from "../../hook/useApiHook"; */
 import { PlantInterface } from "../../hook/dataInterfaces";
+import { placeholderRoom } from "../../hook/localData";
 import { ReactComponent as Close } from "../../icons/Close.svg";
 import PrimaryButton from "./PrimaryButton";
 
@@ -17,29 +18,35 @@ function stopPropagation(e: React.SyntheticEvent) {
 export default function PlantSearch({ closeSearch }: OverlayProps) {
   const [hasError, setHasError] = useState(false);
   const [enabled, setEnabled] = useState(false);
-  const [route, setRoute] = useState<string | null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
-  const { data, error } = useApiGet<PlantInterface>(route);
   const navigate = useNavigate();
 
   function searchPlantPage() {
-    setRoute(`/plants/plant${searchInput.current?.value}`);
-  }
+    const searchValue = searchInput.current?.value;
+    let foundPlant = null;
+    let foundRoomId = "";
 
-  useEffect(() => {
-    if (data) {
+    for (let room of placeholderRoom) {
+      foundPlant = room.plants.find((plant) => plant.plantId === searchValue);
+      if (foundPlant) {
+        foundRoomId = room.roomId;
+        break;
+      }
+    }
+
+    if (foundPlant && foundRoomId) {
       setHasError(false);
       navigate(
         generatePath("/rooms/:roomID/:plantID", {
-          roomID: data.roomId,
-          plantID: data.plantId,
+          roomID: foundRoomId,
+          plantID: foundPlant.plantId,
         })
       );
       closeSearch();
-    } else if (error) {
+    } else {
       setHasError(true);
     }
-  }, [data, error, navigate, closeSearch]);
+  }
 
   useEffect(() => {
     searchInput.current?.focus();
@@ -49,7 +56,6 @@ export default function PlantSearch({ closeSearch }: OverlayProps) {
     const isEmpty = !searchInput.current?.value;
     setEnabled(!isEmpty);
     setHasError(false);
-    setRoute(null);
     if (e.key === "Enter" && !isEmpty) {
       searchPlantPage();
     }

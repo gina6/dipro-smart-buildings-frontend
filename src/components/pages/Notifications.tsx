@@ -1,13 +1,14 @@
 import React from "react";
 import NotificationAlert from "../UI/NotificationAlert";
-import { useApiGet } from "../../hook/useApiHook";
+/* import { useApiGet } from "../../hook/useApiHook"; */
 import { NotificationInterface } from "../../hook/dataInterfaces";
 import CheckIcon from "../../icons/Check.svg";
 import Container from "../UI/Container";
 import Header from "../UI/Header";
+import { placeholderNotifications } from "../../hook/localData";
+
 export default function Notifications() {
-  const notifications =
-    useApiGet<NotificationInterface[]>("/notifications").data;
+  const notifications = placeholderNotifications;
 
   return (
     <>
@@ -35,11 +36,10 @@ export default function Notifications() {
               </div>
             </>
           ) : (
-            <div className="flex h-[80vh] flex-col items-center	justify-center">
-              <div className="">
-                <img src={CheckIcon} alt="Everything okay" />
-              </div>
-              <div className=" pt-3 text-3xl font-bold	text-green">
+            <div className="flex h-[80vh] flex-col items-center justify-center">
+              <img src={CheckIcon} alt="Everything okay" />
+
+              <div className="pt-3 text-3xl font-bold	text-green">
                 Alles in Ordnung!
               </div>
             </div>

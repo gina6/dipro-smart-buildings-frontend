@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { ReactComponent as ChevronDown } from "../../icons/Chevron-Dropdown.svg";
-import { FloorsInterface } from "../../hook/dataInterfaces";
-import { useApiGet } from "../../hook/useApiHook";
+import { placeholderFloors } from "../../hook/localData";
+/* import { useApiGet } from "../../hook/useApiHook"; */
 
 interface DrowpdownProps {
   changeFloorId: (selectedID: string) => void;
@@ -10,7 +10,7 @@ interface DrowpdownProps {
 }
 
 export default function Dropdown({ changeFloorId, fullWidth }: DrowpdownProps) {
-  const floorsData = useApiGet<FloorsInterface[]>(`/floors`).data;
+  const floorsData = placeholderFloors;
   const [floorId, setFloorId] = useState("floor4");
   const [showDropdown, setShowDropdown] = useState(false);
 

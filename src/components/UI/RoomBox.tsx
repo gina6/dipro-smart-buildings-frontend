@@ -21,7 +21,7 @@ export default function RoomBox({
           <div
             className="aspect-square w-full rounded-md bg-cover bg-center"
             style={{
-              backgroundImage: `url("${process.env.REACT_APP_BACKEND_API}${plantImg}")`,
+              backgroundImage: `url("/images/${plantImg}")`,
             }}
           ></div>
         ))}

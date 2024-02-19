@@ -24,7 +24,7 @@ export default function NotificationAlert({
         <div
           className="h-28 w-1/4 rounded-l-lg bg-cover bg-center "
           style={{
-            backgroundImage: `url("${process.env.REACT_APP_BACKEND_API}${plantImg}")`,
+            backgroundImage: `url("/images/${plantImg}")`,
           }}
         ></div>
         <div className="flex h-full w-full justify-between">

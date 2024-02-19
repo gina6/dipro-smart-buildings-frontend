@@ -1,27 +1,35 @@
-import React, { useState } from "react";
-import { useApiGet } from "../../hook/useApiHook";
+import React, { useState, useEffect } from "react";
+/* import { useApiGet } from "../../hook/useApiHook"; */
 import { FloorInterface } from "../../hook/dataInterfaces";
 import RoomBox from "../UI/RoomBox";
 import Container from "../UI/Container";
 import Header from "../UI/Header";
 import Dropdown from "../UI/Dropdown";
+import { placeholderFloors, placeholderFloor } from "../../hook/localData";
 
 export default function Floor() {
   const [floorId, setFloorId] = useState("floor4");
-  const floorData = useApiGet<FloorInterface>(`/floors/${floorId}`).data;
-  const plantCount = countPlants();
+  /*   const floorData = useApiGet<FloorInterface>(`/floors/${floorId}`).data; */
+  const [floorData, setFloorData] = useState<FloorInterface | undefined>(
+    undefined
+  );
+  useEffect(() => {
+    const floorInfo = placeholderFloors.find(
+      (floor) => floor.floorId === floorId
+    );
+    if (floorInfo) {
+      const floor = placeholderFloor.find(
+        (f) => f.floorLabel === floorInfo.floorLabel
+      );
+      setFloorData(floor);
+    }
+  }, [floorId]);
 
-  function countPlants() {
-    let count = 0;
+  const plantCount =
+    floorData?.rooms.reduce((acc, room) => acc + room.plantCount, 0) || 0;
 
-    floorData?.rooms.forEach((room) => {
-      count += room.plantCount;
-    });
-    return count;
-  }
-
-  function changeFloorId(floorId: string) {
-    setFloorId(floorId);
+  function changeFloorId(newFloorId: string) {
+    setFloorId(newFloorId);
   }
 
   return (
@@ -38,7 +46,7 @@ export default function Floor() {
         </div>
         <div className="mb-28 flex flex-col">
           <p className="p-5 text-right uppercase text-green lg:text-left">
-            {plantCount} Pflanzen
+            {plantCount} {plantCount === 1 ? "Pflanze" : "Pflanzen"}
           </p>
           <div className="grid grid-flow-row grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
             {floorData?.rooms
