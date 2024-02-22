@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import {
   RoomInterface,
   PlantInterface,
-  NotificationInterface,
+  /* NotificationInterface, */
 } from "../../hook/dataInterfaces";
 /* import { useApiGet } from "../../hook/useApiHook"; */
 import {

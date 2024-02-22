@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 /* import { useApiGet } from "../../hook/useApiHook"; */
-import { RoomInterface, PlantInterface } from "../../hook/dataInterfaces";
+import { /*RoomInterface,*/ PlantInterface } from "../../hook/dataInterfaces";
 import { placeholderRoom } from "../../hook/localData";
 
 import Container from "../UI/Container";

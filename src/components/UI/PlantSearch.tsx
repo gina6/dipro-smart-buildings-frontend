@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { generatePath, useNavigate } from "react-router-dom";
 /* import { useApiGet } from "../../hook/useApiHook"; */
-import { PlantInterface } from "../../hook/dataInterfaces";
+/* import { PlantInterface } from "../../hook/dataInterfaces"; */
 import { placeholderRoom } from "../../hook/localData";
 import { ReactComponent as Close } from "../../icons/Close.svg";
 import PrimaryButton from "./PrimaryButton";
